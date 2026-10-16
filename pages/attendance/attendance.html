@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الحضور والغياب | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="attendance.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- القائمة الجانبية -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✝</div>
+
+                <div>
+                    <h2>مدارس الأحد</h2>
+                    <p>منصة خدمة الأطفال</p>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <p class="menu-title">القائمة الرئيسية</p>
+
+            <nav class="sidebar-menu">
+
+    <!-- الرئيسية -->
+    <a href="../dashboard/dashboard.html" class="menu-item">
+        <span class="menu-icon">⌂</span>
+        <span>الرئيسية</span>
+    </a>
+
+    <!-- الفصول -->
+    <a href="../classes/classes.html" class="menu-item">
+        <span class="menu-icon">▦</span>
+        <span>الفصول</span>
+    </a>
+
+    <!-- الأطفال -->
+    <a href="../children/children.html" class="menu-item">
+        <span class="menu-icon">♧</span>
+        <span>الأطفال</span>
+    </a>
+
+    <!-- أعياد الميلاد -->
+    <a href="../birthdays/birthdays.html" class="menu-item">
+        <span class="menu-icon">🎂</span>
+        <span>أعياد الميلاد</span>
+    </a>
+
+    <!-- الحضور والغياب -->
+    <a href="attendance.html" class="menu-item active">
+        <span class="menu-icon">✓</span>
+        <span>الحضور والغياب</span>
+    </a>
+
+    <!-- مكتبة الدروس -->
+    <a href="../lessons/lessons.html" class="menu-item">
+        <span class="menu-icon">▤</span>
+        <span>مكتبة الدروس</span>
+    </a>
+
+    <!-- تحضير الدروس -->
+    <a href="../preparation/preparation.html" class="menu-item">
+        <span class="menu-icon">✎</span>
+        <span>تحضير الدروس</span>
+    </a>
+
+    <!-- الأنشطة -->
+    <a href="../activities/activities.html" class="menu-item">
+        <span class="menu-icon">☆</span>
+        <span>الأنشطة</span>
+    </a>
+
+    <!-- المهام -->
+    <a href="../tasks/tasks.html" class="menu-item">
+        <span class="menu-icon">📅</span>
+        <span>مهامي القادمة</span>
+    </a>
+
+    <!-- التقارير -->
+    <a href="../reports/reports.html" class="menu-item">
+        <span class="menu-icon">▥</span>
+        <span>التقارير</span>
+    </a>
+
+    <!-- المدرسون -->
+    <a href="../teachers/teachers.html" class="menu-item">
+        <span class="menu-icon">♙</span>
+        <span>إدارة المدرسين</span>
+    </a>
+
+    <!-- الإعدادات -->
+    <a href="../settings/settings.html" class="menu-item">
+        <span class="menu-icon">⚙</span>
+        <span>الإعدادات</span>
+    </a>
+
+</nav>
+            <div class="sidebar-bottom">
+
+                <div class="user-card">
+                    <div class="user-avatar">م</div>
+
+                    <div class="user-info">
+                        <h4>مدرس الفصل</h4>
+                        <p>حساب تجريبي</p>
+                    </div>
+                </div>
+
+                <a href="../../index.html" class="logout-link">
+                    <span>↪</span>
+                    تسجيل الخروج
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+
+            <!-- رأس الصفحة -->
+            <header class="topbar">
+
+                <div class="page-heading">
+                    <p class="breadcrumb">الرئيسية / الحضور والغياب</p>
+                    <h1>الحضور والغياب</h1>
+                    <p class="page-description">
+                        سجّلي حضور الأطفال وتابعي نسبة الحضور في كل اجتماع.
+                    </p>
+                </div>
+
+                <div class="topbar-date">
+                    <span class="calendar-icon">▦</span>
+
+                    <div>
+                        <span>تاريخ اليوم</span>
+                        <strong id="todayDate">--/--/----</strong>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- بطاقات الإحصائيات -->
+            <section class="statistics-grid">
+
+                <article class="stat-card total-card">
+                    <div class="stat-icon">♧</div>
+
+                    <div class="stat-info">
+                        <p>إجمالي الأطفال</p>
+                        <h2 id="totalChildren">0</h2>
+                        <span>في الفصل المختار</span>
+                    </div>
+                </article>
+
+                <article class="stat-card present-card">
+                    <div class="stat-icon">✓</div>
+
+                    <div class="stat-info">
+                        <p>الحاضرون</p>
+                        <h2 id="presentCount">0</h2>
+                        <span>تم تسجيل حضورهم</span>
+                    </div>
+                </article>
+
+                <article class="stat-card absent-card">
+                    <div class="stat-icon">×</div>
+
+                    <div class="stat-info">
+                        <p>الغائبون</p>
+                        <h2 id="absentCount">0</h2>
+                        <span>تم تسجيل غيابهم</span>
+                    </div>
+                </article>
+
+                <article class="stat-card percentage-card">
+                    <div class="stat-icon">٪</div>
+
+                    <div class="stat-info">
+                        <p>نسبة الحضور</p>
+                        <h2 id="attendancePercentage">0%</h2>
+                        <span>من إجمالي الأطفال</span>
+                    </div>
+                </article>
+
+            </section>
+
+
+            <!-- أدوات اختيار الفصل والتاريخ -->
+            <section class="filter-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>تسجيل حضور الاجتماع</h2>
+                        <p>اختاري الفصل والتاريخ لبدء تسجيل الحضور.</p>
+                    </div>
+
+                    <span class="meeting-badge">اجتماع مدارس الأحد</span>
+                </div>
+
+                <div class="filters-row">
+
+                    <div class="form-group">
+                        <label for="classSelect">الفصل</label>
+
+                        <select id="classSelect">
+                            <option value="">اختاري الفصل</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meetingDate">تاريخ الاجتماع</label>
+
+                        <input type="date" id="meetingDate">
+                    </div>
+
+                    <button type="button" id="loadChildrenBtn" class="primary-button">
+                        عرض الأطفال
+                    </button>
+
+                </div>
+
+                <div class="notice-box">
+                    <span>ℹ</span>
+                    <p>
+                        اختاري الفصل والتاريخ أولًا. سجّلي حالة كل طفل،
+                        ثم اضغطي على زر الحفظ.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- جدول الأطفال -->
+            <section class="attendance-card">
+
+                <div class="table-heading">
+
+                    <div>
+                        <h2>قائمة الأطفال</h2>
+
+                        <p id="selectedClassText">
+                            اختاري الفصل لعرض الأطفال.
+                        </p>
+                    </div>
+
+                    <div class="table-actions">
+
+                        <div class="search-box">
+                            <span>⌕</span>
+
+                            <input
+                                type="text"
+                                id="searchChild"
+                                placeholder="ابحثي عن طفل..."
+                            >
+                        </div>
+
+                        <select id="statusFilter" class="status-filter">
+                            <option value="all">كل الحالات</option>
+                            <option value="present">الحاضرون</option>
+                            <option value="absent">الغائبون</option>
+                            <option value="unmarked">لم يتم التسجيل</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>م</th>
+                                <th>اسم الطفل</th>
+                                <th>الفصل</th>
+                                <th>حالة الحضور</th>
+                                <th>تسجيل الحالة</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="childrenTableBody">
+
+                            <tr>
+                                <td colspan="5" class="empty-message">
+                                    اختاري الفصل والتاريخ ثم اضغطي على عرض الأطفال.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- أسفل الجدول -->
+                <div class="table-footer">
+
+                    <p id="childrenCountText">
+                        عدد الأطفال: 0
+                    </p>
+
+                    <div class="footer-buttons">
+
+                        <button
+                            type="button"
+                            id="resetAttendanceBtn"
+                            class="secondary-button"
+                        >
+                            إعادة تعيين الحالات
+                        </button>
+
+                        <button
+                            type="button"
+                            id="saveAttendanceBtn"
+                            class="primary-button"
+                            disabled
+                        >
+                            ✓ حفظ الحضور
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div id="messageBox" class="message-box" role="status" aria-live="polite"></div>
+
+            </section>
+
+
+            <footer class="page-footer">
+                <p>منصة مدارس الأحد © 2026</p>
+                <p>معًا لخدمة أفضل للأطفال</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="attendance.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+</html>

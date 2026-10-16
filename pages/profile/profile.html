@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الملف الشخصي | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- القائمة الجانبية -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✝</div>
+
+                <div>
+                    <h2>مدارس الأحد</h2>
+                    <p>منصة خدمة الأطفال</p>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <p class="menu-title">القائمة الرئيسية</p>
+
+            <nav class="sidebar-menu">
+
+                <a href="../dashboard/dashboard.html" class="menu-item">
+                    <span class="menu-icon">⌂</span>
+                    <span>الرئيسية</span>
+                </a>
+
+                <a href="../classes/classes.html" class="menu-item">
+                    <span class="menu-icon">▦</span>
+                    <span>الفصول</span>
+                </a>
+
+                <a href="../children/children.html" class="menu-item">
+                    <span class="menu-icon">♧</span>
+                    <span>الأطفال</span>
+                </a>
+
+                <a href="../birthdays/birthdays.html" class="menu-item">
+                    <span class="menu-icon">🎂</span>
+                    <span>أعياد الميلاد</span>
+                </a>
+
+                <a href="../attendance/attendance.html" class="menu-item">
+                    <span class="menu-icon">✓</span>
+                    <span>الحضور والغياب</span>
+                </a>
+
+                <a href="../lessons/lessons.html" class="menu-item">
+                    <span class="menu-icon">📚</span>
+                    <span>مكتبة الدروس</span>
+                </a>
+
+                <a href="../preparation/preparation.html" class="menu-item">
+                    <span class="menu-icon">✎</span>
+                    <span>تحضير الدروس</span>
+                </a>
+
+                <a href="../activities/activities.html" class="menu-item">
+                    <span class="menu-icon">☆</span>
+                    <span>الأنشطة</span>
+                </a>
+
+                <a href="../tasks/tasks.html" class="menu-item">
+                    <span class="menu-icon">📅</span>
+                    <span>مهامي القادمة</span>
+                </a>
+
+                <a href="../reports/reports.html" class="menu-item">
+                    <span class="menu-icon">▥</span>
+                    <span>التقارير</span>
+                </a>
+
+                <a href="../teachers/teachers.html" class="menu-item">
+                    <span class="menu-icon">♙</span>
+                    <span>إدارة المدرسين</span>
+                </a>
+
+                <a href="../settings/settings.html" class="menu-item">
+                    <span class="menu-icon">⚙</span>
+                    <span>الإعدادات</span>
+                </a>
+
+                <a href="profile.html" class="menu-item active">
+                    <span class="menu-icon">👤</span>
+                    <span>الملف الشخصي</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="user-card">
+                    <div class="user-avatar" id="sidebarAvatar">م</div>
+
+                    <div class="user-info">
+                        <h4 id="sidebarName">مدرس الفصل</h4>
+                        <p>حساب تجريبي</p>
+                    </div>
+                </div>
+
+                <a href="../../index.html" class="logout-link">
+                    <span>↪</span>
+                    تسجيل الخروج
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div class="page-heading">
+                    <p class="breadcrumb">الرئيسية / الملف الشخصي</p>
+
+                    <h1>الملف الشخصي</h1>
+
+                    <p class="page-description">
+                        اعرضي بياناتك الشخصية وعدّلي معلوماتك.
+                    </p>
+                </div>
+
+                <div class="profile-status">
+                    <span class="status-dot"></span>
+                    حساب تجريبي
+                </div>
+
+            </header>
+
+            <!-- بطاقة تعريف المدرس -->
+            <section class="profile-banner">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    م
+                </div>
+
+                <div class="profile-banner-info">
+                    <h2 id="displayName">مدرس الفصل</h2>
+
+                    <p id="displayEmail">لم يتم تحديد البريد الإلكتروني</p>
+
+                    <span class="role-badge">
+                        👤 مدرس مدارس الأحد
+                    </span>
+                </div>
+
+            </section>
+
+            <!-- نموذج البيانات -->
+            <section class="profile-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>البيانات الشخصية</h2>
+
+                        <p>
+                            حدّثي المعلومات التالية ثم اضغطي على حفظ التغييرات.
+                        </p>
+                    </div>
+                </div>
+
+                <form id="profileForm">
+
+                    <div class="profile-form-grid">
+
+                        <div class="form-group">
+                            <label for="fullName">الاسم بالكامل *</label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                maxlength="100"
+                                autocomplete="name"
+                                required
+                                placeholder="اكتبي اسمك بالكامل"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                                placeholder="example@email.com"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                maxlength="25"
+                                autocomplete="tel"
+                                placeholder="اكتبي رقم الهاتف"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">الخدمة أو الفصل</label>
+
+                            <input
+                                type="text"
+                                id="service"
+                                name="service"
+                                maxlength="150"
+                                placeholder="مثال: خدمة المرحلة الابتدائية"
+                            >
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="bio">نبذة عنك</label>
+
+                            <textarea
+                                id="bio"
+                                name="bio"
+                                rows="4"
+                                maxlength="1000"
+                                placeholder="اكتبي نبذة قصيرة عن خدمتك..."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button
+                            type="reset"
+                            id="resetFormBtn"
+                            class="secondary-button"
+                        >
+                            إلغاء التعديلات
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            ✓ حفظ التغييرات
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="profileMessage"
+                        class="message-box"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
+
+                </form>
+
+            </section>
+
+            <!-- معلومات الحساب -->
+            <section class="account-info-card">
+
+                <div class="account-info-icon">ℹ</div>
+
+                <div>
+                    <h3>معلومات الحساب</h3>
+
+                    <p>
+                        هذه النسخة من الملف الشخصي تحفظ بياناتك داخل المتصفح
+                        الحالي. تعديل البيانات هنا لا يغيّر حساب تسجيل الدخول
+                        الحقيقي؛ لأن نظام الحسابات لم يُربط بالخادم بعد.
+                    </p>
+                </div>
+
+            </section>
+
+            <footer class="page-footer">
+                <p>منصة مدارس الأحد © 2026</p>
+                <p>معًا لخدمة أفضل للأطفال</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="profile.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

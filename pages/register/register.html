@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إنشاء حساب | منصة مدارس الأحد</title>
+
+    <meta
+        name="description"
+        content="إنشاء حساب جديد للمدرسين في منصة مدارس الأحد."
+    >
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/auth-pages.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="login-page auth-page">
+
+        <section class="login-card auth-card">
+
+            <div class="brand-icon" aria-hidden="true">
+                ✝
+            </div>
+
+            <header class="brand-header">
+                <h1>مدارس الأحد</h1>
+
+                <p class="brand-name">
+                    Sunday School Platform
+                </p>
+
+                <p class="brand-description">
+                    معًا لخدمة أطفالنا بمحبة
+                </p>
+            </header>
+
+            <div class="welcome-section">
+                <h2>إنشاء حساب جديد</h2>
+
+                <p>
+                    سجّلي بياناتك لطلب الانضمام إلى المنصة.
+                </p>
+            </div>
+
+            <form id="registerForm">
+
+                <div class="form-group">
+                    <label for="fullName">
+                        الاسم بالكامل *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="اكتبي اسمك بالكامل"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">
+                        البريد الإلكتروني *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        name="email"
+                        placeholder="example@email.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">
+                        رقم الهاتف
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="رقم الهاتف - اختياري"
+                        autocomplete="tel"
+                        maxlength="25"
+                    >
+                </div>
+
+                <div class="form-group">
+
+                    <label for="registerPassword">
+                        كلمة المرور *
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            name="password"
+                            placeholder="8 أحرف على الأقل"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-toggle-password="registerPassword"
+                            aria-label="إظهار كلمة المرور"
+                            aria-pressed="false"
+                        >
+                            إظهار
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        تأكيد كلمة المرور *
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="أعيدي كتابة كلمة المرور"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-toggle-password="confirmPassword"
+                            aria-label="إظهار تأكيد كلمة المرور"
+                            aria-pressed="false"
+                        >
+                            إظهار
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    إرسال طلب إنشاء الحساب
+                </button>
+
+                <p
+                    id="registerMessage"
+                    class="login-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+            <div class="auth-note">
+                <strong>موافقة المسؤول</strong>
+
+                <p>
+                    إنشاء الحسابات الجديدة يتطلب موافقة المسؤول.
+                    إرسال الطلب من هذه الواجهة لا يمنح صلاحية الدخول
+                    إلى المنصة.
+                </p>
+            </div>
+
+            <div class="auth-links">
+                <a href="../../index.html">
+                    ← العودة إلى تسجيل الدخول
+                </a>
+            </div>
+
+        </section>
+
+        <footer class="page-footer">
+            <p>منصة مدارس الأحد © 2026</p>
+            <p>خدمة بمحبة • تعليم بإيمان • نمو في النعمة</p>
+        </footer>
+
+    </main>
+
+    <script src="register.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

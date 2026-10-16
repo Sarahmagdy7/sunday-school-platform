@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>طلبات الحسابات | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="admin-requests.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="admin-container">
+
+        <header class="admin-header">
+
+            <div class="brand">
+                <div class="brand-icon">✝</div>
+
+                <div>
+                    <h1>مدارس الأحد</h1>
+                    <p>إدارة طلبات الحسابات</p>
+                </div>
+            </div>
+
+            <a
+                href="../dashboard/dashboard.html"
+                class="back-button"
+            >
+                العودة إلى لوحة التحكم
+            </a>
+            <a href="../users/users.html" class="menu-item">
+    <span class="menu-icon">👥</span>
+    <span>إدارة حسابات المستخدمين</span>
+</a>
+
+        </header>
+
+        <section class="welcome-section">
+
+            <div>
+                <p class="breadcrumb">
+                    لوحة التحكم / إدارة الحسابات
+                </p>
+
+                <h2>مراجعة طلبات إنشاء الحسابات</h2>
+
+                <p>
+                    راجعي طلبات المدرسين وحددي حالة كل طلب.
+                </p>
+            </div>
+
+            <div class="admin-badge">
+                🛡️ إدارة الحسابات
+            </div>
+
+        </section>
+
+        <!-- الإحصائيات -->
+
+        <section class="statistics-grid">
+
+            <article class="stat-card">
+                <span>إجمالي الطلبات</span>
+                <strong id="totalRequests">0</strong>
+            </article>
+
+            <article class="stat-card pending-card">
+                <span>طلبات قيد المراجعة</span>
+                <strong id="pendingRequests">0</strong>
+            </article>
+
+            <article class="stat-card approved-card">
+                <span>الطلبات المقبولة</span>
+                <strong id="approvedRequests">0</strong>
+            </article>
+
+            <article class="stat-card rejected-card">
+                <span>الطلبات المرفوضة</span>
+                <strong id="rejectedRequests">0</strong>
+            </article>
+
+        </section>
+
+        <!-- البحث والتصفية -->
+
+        <section class="requests-panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <h2>طلبات التسجيل</h2>
+
+                    <p id="resultsCount">
+                        عدد الطلبات: 0
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="filters-row">
+
+                <div class="form-group">
+                    <label for="searchInput">
+                        البحث
+                    </label>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="ابحثي بالاسم أو البريد الإلكتروني"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="statusFilter">
+                        حالة الطلب
+                    </label>
+
+                    <select id="statusFilter">
+                        <option value="all">كل الطلبات</option>
+                        <option value="pending">قيد المراجعة</option>
+                        <option value="approved">مقبول</option>
+                        <option value="rejected">مرفوض</option>
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    id="resetFiltersBtn"
+                    class="secondary-button"
+                >
+                    إعادة ضبط البحث
+                </button>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>م</th>
+                            <th>اسم المتقدم</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>رقم الهاتف</th>
+                            <th>تاريخ الطلب</th>
+                            <th>الحالة</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="requestsTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div id="emptyState" class="empty-state" hidden>
+                <div class="empty-icon">📋</div>
+
+                <h3>لا توجد طلبات</h3>
+
+                <p>
+                    لم يتم العثور على طلبات تطابق البحث أو التصفية.
+                </p>
+            </div>
+
+            <div
+                id="messageBox"
+                class="message-box"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+        <footer class="page-footer">
+            <p>منصة مدارس الأحد © 2026</p>
+            <p>خدمة بمحبة • تعليم بإيمان • نمو في النعمة</p>
+        </footer>
+
+    </main>
+
+    <script src="admin-requests.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

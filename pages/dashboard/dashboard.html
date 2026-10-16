@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>الرئيسية | منصة مدارس الأحد</title>
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="../../css/theme.css">
+```
+
+</head>
+
+<body>
+
+```
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">✝</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <p>Sunday School</p>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+
+    <a href="dashboard.html" class="nav-link active">
+        <span class="nav-icon">⌂</span>
+        <span>الرئيسية</span>
+    </a>
+
+    <a href="../teachers/teachers.html" class="nav-link">
+        <span class="nav-icon">♙</span>
+        <span>إدارة المدرسين</span>
+    </a>
+
+    <a href="../children/children.html" class="nav-link">
+        <span class="nav-icon">♧</span>
+        <span>الأطفال</span>
+    </a>
+
+    <a href="../classes/classes.html" class="nav-link">
+        <span class="nav-icon">▦</span>
+        <span>الفصول</span>
+    </a>
+    
+     <a href="../attendance/attendance.html" class="nav-link">
+        <span class="nav-icon">✓</span>
+        <span>الحضور والغياب</span>
+    </a>
+    
+
+     <a href="../lessons/lessons.html" class="nav-link">
+        <span class="nav-icon">▣</span>
+        <span>مكتبة الدروس</span>
+    </a>
+
+
+    <a href="../preparation/preparation.html" class="nav-link">
+        <span class="nav-icon">✎</span>
+        <span>تحضير الدروس</span>
+    </a>
+
+    <a href="../activities/activities.html" class="nav-link">
+        <span class="nav-icon">☆</span>
+        <span>الأنشطة</span>
+    </a>
+
+    <a href="../tasks/tasks.html" class="nav-link" data-section="tasks">
+    <span class="nav-icon">📅</span>
+    <span>مهامي القادمة</span>
+</a>
+
+
+
+    <a href="../birthdays/birthdays.html" class="nav-link">
+    <span class="nav-icon">🎂</span>
+    <span>أعياد الميلاد</span>
+</a>
+
+   
+    <a href="../reports/reports.html" class="nav-link">
+        <span class="nav-icon">▥</span>
+        <span>التقارير</span>
+    </a>
+
+</nav>
+ <a href="../settings/settings.html" class="nav-link">
+        <span class="nav-icon">⚙</span>
+        <span>الإعدادات</span>
+
+
+
+        <div class="sidebar-bottom">
+
+   
+        <a href="../profile/profile.html" class="menu-item">
+    <span class="menu-icon">👤</span>
+    <span>الملف الشخصي</span>
+</a>
+
+<br>
+    </a>
+<a href="../admin-requests/admin-requests.html" class="menu-item">
+    <span class="menu-icon">🛡️</span>
+    <span>طلبات الحسابات</span>
+</a>
+    <a
+        href="../../index.html"
+        class="nav-link logout-link"
+        id="logoutButton"
+    >
+        <span class="nav-icon">↪</span>
+        <span>تسجيل الخروج</span>
+    </a>
+
+</div>
+
+        <div class="sidebar-footer">
+            خدمة بمحبة ❤️
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <div class="topbar-right">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="فتح القائمة"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <div>
+                    <p class="topbar-label">منصة مدارس الأحد</p>
+                    <h1>لوحة التحكم</h1>
+                </div>
+
+            </div>
+
+            <div class="profile-area">
+
+                <div class="notification-icon" title="الإشعارات">
+                    ♧
+                </div>
+
+                <div class="profile-avatar">م</div>
+
+                <div class="profile-info">
+                    <strong id="teacherName">المدرس</strong>
+                    <span>مدرس مدارس الأحد</span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Welcome -->
+        <section class="welcome-banner">
+
+            <div class="welcome-content">
+                <span class="welcome-label">أهلًا وسهلًا بك ❤️</span>
+
+                <h2>خدمتك تصنع فرقًا</h2>
+
+                <p>
+                    نظّم فصولك، وتابع حضور الأطفال،
+                    واستعد لدروسك بكل سهولة.
+                </p>
+
+                <a href="#quick-actions" class="welcome-button">
+                    ابدأ يومك
+                    <span>←</span>
+                </a>
+            </div>
+
+            <div class="welcome-decoration" aria-hidden="true">
+                ✝
+            </div>
+
+        </section>
+
+        <!-- Statistics -->
+        <section class="statistics-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>ملخص الخدمة</h2>
+                    <p>نظرة سريعة على الفصول والمهام</p>
+                </div>
+            </div>
+
+            <div class="statistics-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon green-icon">▦</div>
+
+                    <div class="stat-details">
+                        <p>الفصول المسندة إليك</p>
+                        <h3>0</h3>
+                        <span>فصولك الحالية</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon gold-icon">♧</div>
+
+                    <div class="stat-details">
+                        <p>إجمالي الأطفال</p>
+                        <h3>0</h3>
+                        <span>في فصولك</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon blue-icon">✓</div>
+
+                    <div class="stat-details">
+                        <p>سجلات الحضور</p>
+                        <h3>0</h3>
+                        <span>سجلات محفوظة</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon purple-icon">▤</div>
+
+                    <div class="stat-details">
+                        <p>تحضيرات الدروس</p>
+                        <h3>0</h3>
+                        <span>تحضيراتك المحفوظة</span>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions-section" id="quick-actions">
+
+            <div class="section-heading">
+                <div>
+                    <h2>الوصول السريع</h2>
+                    <p>اختاري المهمة اللي عايزة تنفذيها</p>
+                </div>
+            </div>
+
+            <div class="quick-actions-grid">
+
+                <button class="action-card" data-section="attendance">
+                    <span class="action-icon">✓</span>
+                    <strong>تسجيل الحضور</strong>
+                    <span>سجّلي حضور وغياب الأطفال</span>
+                    <span class="action-arrow">←</span>
+                </button>
+
+                <button class="action-card" data-section="lessons">
+                    <span class="action-icon">▤</span>
+                    <strong>مكتبة الدروس</strong>
+                    <span>ابحثي عن الدروس التعليمية</span>
+                    <span class="action-arrow">←</span>
+                </button>
+
+                <button class="action-card" data-section="preparation">
+                    <span class="action-icon">✎</span>
+                    <strong>تحضير درس جديد</strong>
+                    <span>اكتبي تحضيرك واحفظيه</span>
+                    <span class="action-arrow">←</span>
+                </button>
+
+                <button class="action-card" data-section="classes">
+                    <span class="action-icon">▦</span>
+                    <strong>فصولي</strong>
+                    <span>اعرضي الفصول المسندة إليك</span>
+                    <span class="action-arrow">←</span>
+                </button>
+
+            </div>
+
+        </section>
+
+       
+<!-- Upcoming Tasks -->
+
+<section class="tasks-section" id="upcomingTasksSection">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>مهامي القادمة</h2>
+
+            <p>
+                المهام التي تحتاج إلى متابعتك.
+            </p>
+        </div>
+
+        <a
+            href="../tasks/tasks.html"
+            class="tasks-manage-button"
+        >
+            إدارة كل المهام ←
+        </a>
+
+    </div>
+
+
+    <!-- المهام التي يعرضها JavaScript -->
+
+    <div
+        id="dashboardTasksList"
+        class="dashboard-tasks-list"
+    ></div>
+
+
+    <!-- تظهر عندما لا توجد مهام -->
+
+    <div
+        id="dashboardTasksEmpty"
+        class="empty-state"
+        hidden
+    >
+
+        <div class="empty-icon">♡</div>
+
+        <h3>لسه مفيش مهام مضافة</h3>
+
+        <p>
+            أضيفي مهام الخدمة من صفحة إدارة المهام،
+            وهتظهر هنا تلقائيًا.
+        </p>
+
+        <a
+            href="../tasks/tasks.html"
+            class="welcome-button"
+        >
+            + إضافة مهمة
+        </a>
+
+    </div>
+
+</section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p>منصة مدارس الأحد © 2026</p>
+            <p>خدمة بمحبة • تعليم بإيمان • نمو في النعمة</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<script src="dashboard.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+```
+
+</body>
+
+</html>

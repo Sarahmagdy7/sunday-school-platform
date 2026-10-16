@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الإعدادات | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+
+        </a>
+
+        <a href="../dashboard/dashboard.html" class="back-button">
+            ← لوحة التحكم
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- عنوان الصفحة -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="breadcrumb">
+                    الرئيسية / الإعدادات
+                </div>
+
+                <h1>الإعدادات</h1>
+
+                <p>
+                    خصّصي إعدادات المنصة بما يناسب احتياجات الخدمة.
+                </p>
+
+            </div>
+
+            <div class="heading-icon">⚙️</div>
+
+        </section>
+
+
+        <!-- رسالة تعريفية -->
+
+        <div class="info-banner">
+
+            <span>ℹ️</span>
+
+            <p>
+                يمكنك تعديل الإعدادات التالية وحفظها على هذا المتصفح.
+                ستحتاج بعض الإعدادات إلى الربط بالخادم عند استكمال المنصة.
+            </p>
+
+        </div>
+
+
+        <form id="settingsForm">
+
+            <!-- بيانات الخدمة -->
+
+            <section class="settings-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon green-icon">⛪</div>
+
+                    <div>
+                        <h2>بيانات الخدمة</h2>
+
+                        <p>
+                            المعلومات الأساسية الخاصة بخدمة مدارس الأحد.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="churchName">
+                            اسم الكنيسة
+                        </label>
+
+                        <input
+                            type="text"
+                            id="churchName"
+                            placeholder="اكتبي اسم الكنيسة"
+                            maxlength="150"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="serviceName">
+                            اسم الخدمة
+                        </label>
+
+                        <input
+                            type="text"
+                            id="serviceName"
+                            placeholder="مثال: خدمة مدارس الأحد"
+                            maxlength="150"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <label for="serviceDescription">
+                            وصف الخدمة
+                        </label>
+
+                        <textarea
+                            id="serviceDescription"
+                            rows="3"
+                            placeholder="اكتبي وصفًا مختصرًا للخدمة وأهدافها..."
+                            maxlength="1000"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- بيانات الملف الشخصي -->
+
+            <section class="settings-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon blue-icon">👤</div>
+
+                    <div>
+                        <h2>الملف الشخصي</h2>
+
+                        <p>
+                            البيانات التي تفضّلين عرضها داخل الواجهة.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="displayName">
+                            الاسم المعروض
+                        </label>
+
+                        <input
+                            type="text"
+                            id="displayName"
+                            placeholder="اكتبي الاسم المعروض"
+                            maxlength="100"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="userRole">
+                            نوع الحساب
+                        </label>
+
+                        <select id="userRole">
+
+                            <option value="teacher">
+                                مدرس
+                            </option>
+
+                            <option value="assistant">
+                                مساعد مدرس
+                            </option>
+
+                            <option value="admin">
+                                مسؤول الخدمة
+                            </option>
+
+                        </select>
+
+                        <small>
+                            اختيار نوع الحساب هنا تجريبي، ولا يغيّر صلاحيات الدخول الفعلية.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- إعدادات الواجهة -->
+
+<section class="settings-card">
+
+    <div class="section-heading">
+
+        <div class="section-icon gold-icon">🎨</div>
+
+        <div>
+            <h2>تخصيص الواجهة</h2>
+            <p>اختاري ألوان المنصة وطريقة عرضها وحجم الخط.</p>
+        </div>
+
+    </div>
+
+    <div class="form-grid">
+
+        <!-- اختيار اللون -->
+
+        <div class="form-group">
+
+            <label for="colorThemeSelect">
+                اللون الأساسي للمنصة
+            </label>
+
+            <select id="colorThemeSelect">
+
+                <option value="green">🟢 أخضر هادئ</option>
+
+                <option value="blue">🔵 أزرق</option>
+
+                <option value="purple">🟣 بنفسجي</option>
+
+                <option value="pink">🩷 وردي</option>
+
+                <option value="orange">🟠 برتقالي</option>
+
+            </select>
+
+            <small>
+                اللون المختار سيُطبق على الصفحات المرتبطة بنظام المظهر العام.
+            </small>
+
+        </div>
+
+        <!-- الوضع الفاتح والداكن -->
+
+        <div class="form-group">
+
+            <label for="themeModeSelect">
+                وضع العرض
+            </label>
+
+            <select id="themeModeSelect">
+
+                <option value="light">☀️ الوضع الفاتح</option>
+
+                <option value="dark">🌙 الوضع الداكن</option>
+
+            </select>
+
+        </div>
+
+        <!-- حجم الخط -->
+
+        <div class="form-group">
+
+            <label for="fontSize">
+                حجم الخط
+            </label>
+
+            <select id="fontSize">
+
+                <option value="normal">عادي</option>
+
+                <option value="large">كبير</option>
+
+            </select>
+
+        </div>
+
+        <!-- الصفحة المفضلة -->
+
+        <div class="form-group full-width">
+
+            <label for="defaultPage">
+                الصفحة المفضلة
+            </label>
+
+            <select id="defaultPage">
+
+                <option value="dashboard">لوحة التحكم</option>
+
+                <option value="classes">الفصول</option>
+
+                <option value="children">الأطفال</option>
+
+                <option value="attendance">الحضور والغياب</option>
+
+            </select>
+
+            <small>
+                يتم حفظ اختيارك حاليًا، أما فتح الصفحة المفضلة تلقائيًا
+                فيحتاج إلى ربطه بنظام التنقل.
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- معاينة المظهر -->
+
+    <div class="appearance-preview" id="appearancePreview">
+
+        <div class="preview-icon">✦</div>
+
+        <div>
+
+            <strong>معاينة المظهر</strong>
+
+            <p id="themePreviewText">
+                اختاري اللون والوضع المناسبين لك.
+            </p>
+
+        </div>
+
+        <span class="preview-badge" id="fontPreview">
+            خط عادي
+        </span>
+
+    </div>
+
+</section>
+
+
+         <!-- =====================================
+     أزرار حفظ الإعدادات
+===================================== -->
+
+<div class="settings-actions">
+
+    <!-- زر حفظ الإعدادات -->
+
+    <button
+        type="submit"
+        class="primary-button"
+    >
+        💾 حفظ الإعدادات
+    </button>
+
+    <!-- زر إعادة الإعدادات الافتراضية -->
+
+    <button
+        type="button"
+        id="resetSettingsBtn"
+        class="secondary-button"
+    >
+        ↩️ إعادة الإعدادات الافتراضية
+    </button>
+
+</div>
+
+</form>  
+                      
+
+
+        <!-- معلومات نسخة التطوير -->
+
+        <section class="footer-note">
+
+            <span>🛡️</span>
+
+            <div>
+
+                <strong>ملاحظة عن الحساب والصلاحيات</strong>
+
+                <p>
+                    هذه الصفحة لا تغيّر كلمة المرور أو صلاحيات الحساب الحقيقية.
+                    سيتم تنفيذ تسجيل الدخول والصلاحيات وحفظ إعدادات كل مستخدم
+                    بصورة آمنة عند تجهيز الخادم وقاعدة البيانات.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- رسالة التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="settings.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إدارة حسابات المستخدمين | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- القائمة الجانبية -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✝</div>
+
+                <div>
+                    <h2>مدارس الأحد</h2>
+                    <p>إدارة المنصة</p>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <p class="menu-title">إدارة المنصة</p>
+
+            <nav class="sidebar-menu">
+
+                <a
+                    href="../admin-dashboard/admin-dashboard.html"
+                    class="menu-item"
+                >
+                    <span class="menu-icon">⌂</span>
+                    <span>لوحة المسؤول</span>
+                </a>
+
+                <a
+                    href="../admin-requests/admin-requests.html"
+                    class="menu-item"
+                >
+                    <span class="menu-icon">📋</span>
+                    <span>طلبات الحسابات</span>
+                </a>
+
+                <a href="users.html" class="menu-item active">
+                    <span class="menu-icon">👥</span>
+                    <span>إدارة حسابات المستخدمين</span>
+                </a>
+
+                <a href="../teachers/teachers.html" class="menu-item">
+                    <span class="menu-icon">♙</span>
+                    <span>إدارة المدرسين</span>
+                </a>
+
+                <a href="../classes/classes.html" class="menu-item">
+                    <span class="menu-icon">▦</span>
+                    <span>الفصول</span>
+                </a>
+
+                <a href="../children/children.html" class="menu-item">
+                    <span class="menu-icon">♧</span>
+                    <span>الأطفال</span>
+                </a>
+
+                <a href="../attendance/attendance.html" class="menu-item">
+                    <span class="menu-icon">✓</span>
+                    <span>الحضور والغياب</span>
+                </a>
+
+                <a href="../lessons/lessons.html" class="menu-item">
+                    <span class="menu-icon">📚</span>
+                    <span>مكتبة الدروس</span>
+                </a>
+
+                <a href="../birthdays/birthdays.html" class="menu-item">
+                    <span class="menu-icon">🎂</span>
+                    <span>أعياد الميلاد</span>
+                </a>
+
+                <a href="../reports/reports.html" class="menu-item">
+                    <span class="menu-icon">▥</span>
+                    <span>التقارير</span>
+                </a>
+
+                <a href="../settings/settings.html" class="menu-item">
+                    <span class="menu-icon">⚙</span>
+                    <span>الإعدادات</span>
+                </a>
+
+                <a href="../profile/profile.html" class="menu-item">
+                    <span class="menu-icon">👤</span>
+                    <span>الملف الشخصي</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="user-card">
+                    <div class="user-avatar">م</div>
+
+                    <div class="user-info">
+                        <h4>مسؤول المنصة</h4>
+                        <p>واجهة تجريبية</p>
+                    </div>
+                </div>
+
+                <a href="../../index.html" class="logout-link">
+                    <span>↪</span>
+                    العودة لتسجيل الدخول
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div class="page-heading">
+                    <p class="breadcrumb">
+                        لوحة المسؤول / حسابات المستخدمين
+                    </p>
+
+                    <h1>إدارة حسابات المستخدمين</h1>
+
+                    <p class="page-description">
+                        تابعي حالة حسابات المدرسين التي تمت الموافقة عليها.
+                    </p>
+                </div>
+
+                <div class="page-badge">
+                    👥 إدارة المستخدمين
+                </div>
+
+            </header>
+
+            <!-- الإحصائيات -->
+            <section class="statistics-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon green-icon">👥</div>
+
+                    <div>
+                        <p>إجمالي الحسابات المعتمدة</p>
+                        <h2 id="totalUsers">0</h2>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon blue-icon">✓</div>
+
+                    <div>
+                        <p>الحسابات النشطة</p>
+                        <h2 id="activeUsers">0</h2>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon red-icon">⊘</div>
+
+                    <div>
+                        <p>الحسابات المعطّلة</p>
+                        <h2 id="disabledUsers">0</h2>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- الحسابات -->
+            <section class="users-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>حسابات المدرسين</h2>
+
+                        <p id="resultsCount">
+                            عدد الحسابات: 0
+                        </p>
+                    </div>
+
+                    <a
+                        href="../admin-requests/admin-requests.html"
+                        class="primary-button"
+                    >
+                        مراجعة طلبات التسجيل
+                    </a>
+
+                </div>
+
+                <!-- البحث والتصفية -->
+                <div class="filters-row">
+
+                    <div class="form-group">
+                        <label for="searchInput">
+                            البحث عن مستخدم
+                        </label>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="ابحثي بالاسم أو البريد الإلكتروني..."
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="statusFilter">
+                            حالة الحساب
+                        </label>
+
+                        <select id="statusFilter">
+                            <option value="all">كل الحالات</option>
+                            <option value="active">نشط</option>
+                            <option value="disabled">معطّل</option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="resetFiltersBtn"
+                        class="secondary-button"
+                    >
+                        إعادة ضبط البحث
+                    </button>
+
+                </div>
+
+                <!-- جدول المستخدمين -->
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>م</th>
+                                <th>اسم المدرس</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>رقم الهاتف</th>
+                                <th>تاريخ الطلب</th>
+                                <th>حالة الحساب</th>
+                                <th>الإجراء</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="usersTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- الحالة الفارغة -->
+                <div id="emptyState" class="empty-state" hidden>
+
+                    <div class="empty-icon">👥</div>
+
+                    <h3 id="emptyTitle">لا توجد حسابات</h3>
+
+                    <p id="emptyDescription">
+                        لا توجد حسابات تطابق البحث الحالي.
+                    </p>
+
+                    <a
+                        href="../admin-requests/admin-requests.html"
+                        class="primary-button"
+                    >
+                        الانتقال إلى طلبات التسجيل
+                    </a>
+
+                </div>
+
+                <div
+                    id="messageBox"
+                    class="message-box"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+            </section>
+
+            <!-- تنبيه -->
+            <section class="notice-card">
+
+                <span class="notice-icon">ℹ</span>
+
+                <div>
+                    <h3>معلومات مهمة</h3>
+
+                    <p>
+                        هذه واجهة تجريبية. حالة الحساب النشط أو المعطّل
+                        تُحفظ محليًا في المتصفح، ولا تمنع تسجيل الدخول
+                        فعليًا. تطبيق الصلاحيات والحماية يتطلب Backend
+                        ونظام مصادقة حقيقيًا.
+                    </p>
+                </div>
+
+            </section>
+
+            <footer class="page-footer">
+                <p>منصة مدارس الأحد © 2026</p>
+                <p>خدمة بمحبة • تعليم بإيمان • نمو في النعمة</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="users.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

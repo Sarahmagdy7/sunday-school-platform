@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إدارة الأطفال | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="children.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✝</div>
+
+                <div class="brand-text">
+                    <h2>مدارس الأحد</h2>
+                    <p>منصة الخدمة</p>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <p class="menu-title">القائمة الرئيسية</p>
+
+            <nav class="sidebar-menu">
+
+    <!-- الرئيسية -->
+    <a href="../dashboard/dashboard.html" class="menu-item">
+        <span class="menu-icon">⌂</span>
+        <span>الرئيسية</span>
+    </a>
+
+    <!-- الفصول -->
+    <a href="../classes/classes.html" class="menu-item">
+        <span class="menu-icon">▦</span>
+        <span>الفصول</span>
+    </a>
+
+    <!-- الأطفال -->
+    <a href="children.html" class="menu-item active">
+        <span class="menu-icon">♧</span>
+        <span>الأطفال</span>
+    </a>
+
+    <!-- أعياد الميلاد -->
+    <a href="../birthdays/birthdays.html" class="menu-item">
+        <span class="menu-icon">🎂</span>
+        <span>أعياد الميلاد</span>
+    </a>
+
+    <!-- الحضور والغياب -->
+    <a href="../attendance/attendance.html" class="menu-item">
+        <span class="menu-icon">✓</span>
+        <span>الحضور والغياب</span>
+    </a>
+
+    <!-- مكتبة الدروس -->
+    <a href="../lessons/lessons.html" class="menu-item">
+        <span class="menu-icon">▤</span>
+        <span>مكتبة الدروس</span>
+    </a>
+
+    <!-- تحضير الدروس -->
+    <a href="../preparation/preparation.html" class="menu-item">
+        <span class="menu-icon">✎</span>
+        <span>تحضير الدروس</span>
+    </a>
+
+    <!-- الأنشطة -->
+    <a href="../activities/activities.html" class="menu-item">
+        <span class="menu-icon">☆</span>
+        <span>الأنشطة</span>
+    </a>
+
+    <!-- المهام -->
+    <a href="../tasks/tasks.html" class="menu-item">
+        <span class="menu-icon">📅</span>
+        <span>مهامي القادمة</span>
+    </a>
+
+    <!-- التقارير -->
+    <a href="../reports/reports.html" class="menu-item">
+        <span class="menu-icon">▥</span>
+        <span>التقارير</span>
+    </a>
+
+    <!-- المدرسون -->
+    <a href="../teachers/teachers.html" class="menu-item">
+        <span class="menu-icon">♙</span>
+        <span>إدارة المدرسين</span>
+    </a>
+
+    <!-- الإعدادات -->
+    <a href="../settings/settings.html" class="menu-item">
+        <span class="menu-icon">⚙</span>
+        <span>الإعدادات</span>
+    </a>
+
+</nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="user-info">
+                    <div class="user-avatar">م</div>
+
+                    <div>
+                        <h4>مسؤول المنصة</h4>
+                        <p>حساب تجريبي</p>
+                    </div>
+                </div>
+
+                <button class="logout-button" id="logoutButton">
+                    <span>↪</span>
+                    تسجيل الخروج
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="فتح القائمة">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    <span>الرئيسية</span>
+                    <span class="breadcrumb-arrow">‹</span>
+                    <strong>إدارة الأطفال</strong>
+                </div>
+
+                <div class="topbar-left">
+                    <span class="topbar-icon">✦</span>
+                    <span class="topbar-text">منصة مدارس الأحد</span>
+                </div>
+
+            </header>
+
+            <!-- Content -->
+            <section class="content-area">
+
+                <!-- Page Heading -->
+                <div class="page-heading">
+
+                    <div>
+                        <p class="welcome-label">رعاية ومتابعة الأطفال</p>
+
+                        <h1>إدارة الأطفال</h1>
+
+                        <p class="page-description">
+                            نظّمي بيانات الأطفال وتابعي الفصول المسجلين فيها.
+                        </p>
+                    </div>
+
+                    <button class="primary-button" id="addChildButton">
+                        <span class="button-plus">＋</span>
+                        إضافة طفل جديد
+                    </button>
+
+                </div>
+
+                <!-- Statistics -->
+                <div class="statistics-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green-icon">♧</div>
+
+                        <div>
+                            <p>إجمالي الأطفال</p>
+                            <h2 id="totalChildren">5</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon gold-icon">▦</div>
+
+                        <div>
+                            <p>عدد الفصول</p>
+                            <h2 id="totalClasses">3</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue-icon">✓</div>
+
+                        <div>
+                            <p>الأطفال المسجلون</p>
+                            <h2 id="registeredChildren">5</h2>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="filter-card">
+
+                    <div class="search-box">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="ابحثي باسم الطفل..."
+                            aria-label="البحث عن طفل">
+
+                    </div>
+
+                    <div class="filter-select">
+
+                        <label for="classFilter">الفصل</label>
+
+                        <select id="classFilter">
+                            <option value="all">كل الفصول</option>
+                        </select>
+
+                    </div>
+
+                    <div class="filter-select">
+
+                        <label for="genderFilter">النوع</label>
+
+                        <select id="genderFilter">
+                            <option value="all">الكل</option>
+                            <option value="male">ولد</option>
+                            <option value="female">بنت</option>
+                        </select>
+
+                    </div>
+
+                    <button class="reset-button" id="resetFiltersButton">
+                        إعادة ضبط
+                    </button>
+
+                </div>
+
+                <!-- Children Heading -->
+                <div class="section-heading">
+
+                    <div>
+                        <h2>قائمة الأطفال</h2>
+                        <p>بيانات تجريبية للتأكد من عمل الواجهة.</p>
+                    </div>
+
+                    <span class="results-count" id="resultsCount">
+                        5 أطفال
+                    </span>
+
+                </div>
+
+                <!-- Table -->
+                <div class="table-container">
+
+                    <table class="children-table">
+
+                        <thead>
+                            <tr>
+                                <th>الطفل</th>
+                                <th>النوع</th>
+                                <th>الفصل</th>
+                                <th>اسم ولي الأمر</th>
+                                <th>رقم التواصل</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="childrenTableBody">
+                        </tbody>
+
+                    </table>
+
+                    <div class="empty-state" id="emptyState" hidden>
+
+                        <div class="empty-icon">⌕</div>
+
+                        <h3>لا توجد نتائج</h3>
+
+                        <p>
+                            لم يتم العثور على أطفال مطابقين لعملية البحث.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <footer class="page-footer">
+                    <p>منصة مدارس الأحد © 2026</p>
+                    <p>نخدم بمحبة وننمو معًا</p>
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Add/Edit Child Modal -->
+    <div class="modal-overlay" id="childModal" hidden>
+
+        <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="modal-subtitle">إدارة بيانات الطفل</p>
+                    <h2 id="modalTitle">إضافة طفل جديد</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeModalButton"
+                    aria-label="إغلاق">
+                    ×
+                </button>
+
+            </div>
+
+            <form id="childForm">
+
+                <input type="hidden" id="childId">
+
+                <div class="form-group">
+
+                    <label for="childName">اسم الطفل *</label>
+
+                    <input
+                        type="text"
+                        id="childName"
+                        placeholder="اكتبي اسم الطفل"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="childGender">النوع *</label>
+
+                        <select id="childGender" required>
+                            <option value="">اختاري النوع</option>
+                            <option value="male">ولد</option>
+                            <option value="female">بنت</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="childClass">الفصل *</label>
+
+                        <select id="childClass" required>
+                            <option value="">اختاري الفصل</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="guardianName">اسم ولي الأمر *</label>
+
+                    <input
+                        type="text"
+                        id="guardianName"
+                        placeholder="اكتبي اسم ولي الأمر"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="guardianPhone">
+                        رقم تواصل ولي الأمر
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="guardianPhone"
+                        placeholder="مثال: 01012345678"
+                        maxlength="20"
+                        inputmode="tel">
+
+                </div>
+
+                <p class="privacy-note">
+                    استخدمي أسماء وأرقامًا وهمية أثناء تجربة الصفحة.
+                </p>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        id="cancelModalButton">
+                        إلغاء
+                    </button>
+
+                    <button type="submit" class="save-button">
+                        حفظ البيانات
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="children.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

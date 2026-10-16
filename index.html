@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>تسجيل الدخول | منصة مدارس الأحد</title>
+
+<meta name="description" content="منصة مدارس الأحد لتنظيم خدمة المدرسين وتحضير الدروس ومتابعة الفصول.">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/theme.css">
+```
+
+</head>
+
+<body>
+
+```
+<main class="login-page">
+
+    <section class="login-card">
+
+        <div class="brand-icon" aria-hidden="true">
+            ✝
+        </div>
+
+        <header class="brand-header">
+            <h1>مدارس الأحد</h1>
+            <p class="brand-name">Sunday School Platform</p>
+            <p class="brand-description">
+                معًا لخدمة أطفالنا بمحبة
+            </p>
+        </header>
+
+        <div class="welcome-section">
+            <h2>أهلًا بيك ❤️</h2>
+            <p>سجّل دخولك علشان تتابع خدمتك</p>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="اكتب كلمة المرور"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="toggle-password"
+                        id="togglePassword"
+                        aria-label="إظهار كلمة المرور"
+                        aria-pressed="false"
+                    >
+                        إظهار
+                    </button>
+
+                </div>
+            </div>
+
+            <a href="pages/forgot-password/forgot-password.html"
+   id="forgotPasswordLink">
+    نسيت كلمة المرور؟
+</a>
+
+            <button type="submit" class="login-button">
+                تسجيل الدخول
+            </button>
+
+            <p
+                id="loginMessage"
+                class="login-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+        <div class="register-section">
+            <p>
+                أول مرة تستخدم المنصة؟
+                <a href="pages/register/register.html"
+    id="registerLink">
+    إنشاء حساب
+</a>
+\            </p>
+            <p class="approval-note">
+                الحسابات الجديدة تحتاج إلى موافقة المسؤول قبل استخدام المنصة.
+            </p>
+        </div>
+
+    </section>
+
+    <footer class="page-footer">
+        <p>منصة مدارس الأحد © 2026</p>
+        <p>خدمة بمحبة • تعليم بإيمان • نمو في النعمة</p>
+    </footer>
+
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/theme.js"></script>
+```
+
+</body>
+</html>

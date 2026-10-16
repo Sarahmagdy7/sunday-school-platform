@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تحضير الدروس | مدارس الأحد</title>
+
+    <link rel="stylesheet" href="preparation.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+        </a>
+
+        <a href="../dashboard/dashboard.html" class="back-button">
+            ← لوحة التحكم
+        </a>
+
+    </header>
+<!-- =====================================
+     قائمة التنقل بين صفحات المنصة
+===================================== -->
+
+<nav class="page-navigation" aria-label="التنقل بين صفحات المنصة">
+
+    <a href="../dashboard/dashboard.html" class="page-nav-link">
+        <span>⌂</span>
+        الرئيسية
+    </a>
+
+    <a href="../classes/classes.html" class="page-nav-link">
+        <span>▦</span>
+        الفصول
+    </a>
+
+    <a href="../children/children.html" class="page-nav-link">
+        <span>♧</span>
+        الأطفال
+    </a>
+
+    <a href="../birthdays/birthdays.html" class="page-nav-link">
+        <span>🎂</span>
+        أعياد الميلاد
+    </a>
+
+    <a href="../attendance/attendance.html" class="page-nav-link">
+        <span>✓</span>
+        الحضور والغياب
+    </a>
+
+    <a href="../lessons/lessons.html" class="page-nav-link">
+        <span>📚</span>
+        مكتبة الدروس
+    </a>
+
+    <a
+        href="preparation.html"
+        class="page-nav-link active"
+        aria-current="page"
+    >
+        <span>✎</span>
+        تحضير الدروس
+    </a>
+
+    <a href="../activities/activities.html" class="page-nav-link">
+        <span>☆</span>
+        الأنشطة
+    </a>
+
+    <a href="../tasks/tasks.html" class="page-nav-link">
+        <span>📅</span>
+        المهام
+    </a>
+
+    <a href="../reports/reports.html" class="page-nav-link">
+        <span>▥</span>
+        التقارير
+    </a>
+
+    <a href="../teachers/teachers.html" class="page-nav-link">
+        <span>♙</span>
+        المدرسون
+    </a>
+
+    <a href="../settings/settings.html" class="page-nav-link">
+        <span>⚙</span>
+        الإعدادات
+    </a>
+
+</nav>
+
+    <main class="container">
+
+        <!-- عنوان الصفحة -->
+
+        <section class="page-heading">
+
+            <div>
+                <div class="breadcrumb">
+                    الرئيسية / تحضير الدروس
+                </div>
+
+                <h1>تحضير الدروس</h1>
+
+                <p>
+                    حضّر دروسك، ونظّم أفكارك، واحتفظ بتحضيراتك للرجوع إليها.
+                </p>
+            </div>
+
+            <div class="heading-icon">📖</div>
+
+        </section>
+
+
+        <!-- إحصائيات التحضير -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-icon icon-green">📝</div>
+
+                <div>
+                    <p>إجمالي التحضيرات</p>
+                    <h2 id="totalPreparations">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon icon-gold">📚</div>
+
+                <div>
+                    <p>تحضيرات الابتدائي</p>
+                    <h2 id="primaryPreparations">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon icon-blue">📅</div>
+
+                <div>
+                    <p>تحضيرات هذا الشهر</p>
+                    <h2 id="monthlyPreparations">0</h2>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- محتوى الصفحة -->
+
+        <div class="main-grid">
+
+            <!-- نموذج التحضير -->
+
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2 id="formHeading">تحضير درس جديد</h2>
+
+                        <p>
+                            املئي البيانات التالية لتنظيم تحضير الدرس.
+                        </p>
+                    </div>
+
+                    <span class="heading-badge">✎ تحضير</span>
+
+                </div>
+
+
+                <form id="preparationForm">
+
+                    <input
+                        type="hidden"
+                        id="preparationId"
+                    >
+
+
+                    <!-- بيانات الدرس -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>01</span>
+                            البيانات الأساسية
+                        </h3>
+
+                        <div class="form-group">
+                            <label for="lessonSelect">
+                                اختيار الدرس
+                            </label>
+
+                            <select id="lessonSelect">
+
+                                <option value="custom">
+                                    درس آخر / درس جديد
+                                </option>
+
+                                <option
+                                    value="old-creation"
+                                    data-title="الله الخالق"
+                                    data-reference="سفر التكوين 1"
+                                >
+                                    الله الخالق
+                                </option>
+
+                                <option
+                                    value="noah"
+                                    data-title="فلك نوح"
+                                    data-reference="سفر التكوين 6-9"
+                                >
+                                    فلك نوح
+                                </option>
+
+                                <option
+                                    value="moses"
+                                    data-title="قصة موسى"
+                                    data-reference="سفر الخروج"
+                                >
+                                    قصة موسى
+                                </option>
+
+                                <option
+                                    value="david"
+                                    data-title="داود وجليات"
+                                    data-reference="صموئيل الأول 17"
+                                >
+                                    داود وجليات
+                                </option>
+
+                                <option
+                                    value="good-samaritan"
+                                    data-title="السامري الصالح"
+                                    data-reference="إنجيل لوقا 10: 25-37"
+                                >
+                                    السامري الصالح
+                                </option>
+
+                                <option
+                                    value="lost-sheep"
+                                    data-title="الخروف الضال"
+                                    data-reference="إنجيل لوقا 15: 3-7"
+                                >
+                                    الخروف الضال
+                                </option>
+
+                                <option
+                                    value="zachaeus"
+                                    data-title="زكا العشار"
+                                    data-reference="إنجيل لوقا 19: 1-10"
+                                >
+                                    زكا العشار
+                                </option>
+
+                                <option
+                                    value="jesus-love"
+                                    data-title="محبة المسيح للأطفال"
+                                    data-reference="إنجيل مرقس 10: 13-16"
+                                >
+                                    محبة المسيح للأطفال
+                                </option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="lessonTitle">
+                                عنوان الدرس *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lessonTitle"
+                                placeholder="اكتبي عنوان الدرس"
+                                maxlength="150"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="two-columns">
+
+                            <div class="form-group">
+
+                                <label for="lessonStage">
+                                    المرحلة
+                                </label>
+
+                                <select id="lessonStage">
+
+                                    <option value="primary">
+                                        الابتدائي
+                                    </option>
+
+                                    <option value="nursery">
+                                        الحضانة
+                                    </option>
+
+                                    <option value="middle">
+                                        الإعدادي
+                                    </option>
+
+                                    <option value="secondary">
+                                        الثانوي
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="lessonClass">
+                                    الفصل
+                                </label>
+
+                                <select id="lessonClass">
+
+                                    <option value="first">
+                                        الصف الأول الابتدائي
+                                    </option>
+
+                                    <option value="second">
+                                        الصف الثاني الابتدائي
+                                    </option>
+
+                                    <option value="third">
+                                        الصف الثالث الابتدائي
+                                    </option>
+
+                                    <option value="fourth">
+                                        الصف الرابع الابتدائي
+                                    </option>
+
+                                    <option value="fifth">
+                                        الصف الخامس الابتدائي
+                                    </option>
+
+                                    <option value="sixth">
+                                        الصف السادس الابتدائي
+                                    </option>
+
+                                    <option value="nursery">
+                                        الحضانة
+                                    </option>
+
+                                    <option value="general">
+                                        كل الفصول
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="two-columns">
+
+                            <div class="form-group">
+
+                                <label for="lessonDate">
+                                    تاريخ الدرس *
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="lessonDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="lessonReference">
+                                    المرجع الكتابي
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="lessonReference"
+                                    placeholder="مثال: سفر التكوين 1"
+                                    maxlength="150"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- الهدف -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>02</span>
+                            الهدف من الدرس
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonObjective">
+                                ماذا أريد أن يتعلم الطفل؟ *
+                            </label>
+
+                            <textarea
+                                id="lessonObjective"
+                                rows="3"
+                                placeholder="اكتبي الهدف الأساسي من الدرس..."
+                                maxlength="2000"
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- التمهيد -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>03</span>
+                            التمهيد
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonIntroduction">
+                                كيف سأبدأ الدرس؟
+                            </label>
+
+                            <textarea
+                                id="lessonIntroduction"
+                                rows="3"
+                                placeholder="سؤال بسيط، موقف، قصة قصيرة، أو مقدمة تجذب الأطفال..."
+                                maxlength="3000"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- الوسائل التعليمية -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>04</span>
+                            الوسائل التعليمية
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonTools">
+                                وسائل الإيضاح والأدوات
+                            </label>
+
+                            <textarea
+                                id="lessonTools"
+                                rows="3"
+                                placeholder="صور، مجسمات، قصة مصورة، سبورة، فيديو..."
+                                maxlength="3000"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- شرح الدرس -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>05</span>
+                            خطوات شرح الدرس
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonSteps">
+                                الشرح بالتفصيل *
+                            </label>
+
+                            <textarea
+                                id="lessonSteps"
+                                rows="7"
+                                placeholder="1- بداية القصة&#10;2- الأحداث الأساسية&#10;3- ماذا نتعلم من القصة؟"
+                                maxlength="10000"
+                                required
+                            ></textarea>
+
+                            <small>
+                                اكتبي كل خطوة في سطر منفصل حتى يكون التحضير منظمًا.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- الأسئلة -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>06</span>
+                            الأسئلة والمناقشة
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonQuestions">
+                                أسئلة للأطفال
+                            </label>
+
+                            <textarea
+                                id="lessonQuestions"
+                                rows="4"
+                                placeholder="1- ماذا تعلمنا من الدرس؟&#10;2- ماذا فعلت الشخصية الرئيسية؟"
+                                maxlength="5000"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- النشاط -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>07</span>
+                            النشاط والتطبيق
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonActivity">
+                                نشاط يشارك فيه الأطفال
+                            </label>
+
+                            <textarea
+                                id="lessonActivity"
+                                rows="3"
+                                placeholder="لعبة تعليمية، رسم، ترتيب صور، تمثيل القصة..."
+                                maxlength="4000"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- التأمل الشخصي -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>08</span>
+                            التأمل الشخصي والتطبيق العملي
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonReflection">
+                                ماذا أريد أن أطبق في حياتي؟ وكيف أساعد الأطفال على التطبيق؟
+                            </label>
+
+                            <textarea
+                                id="lessonReflection"
+                                rows="3"
+                                placeholder="اكتبي تأملك الشخصي وتطبيق الدرس في حياة الأطفال..."
+                                maxlength="4000"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- الخاتمة -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            <span>09</span>
+                            الخاتمة والصلاة
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="lessonConclusion">
+                                تلخيص الدرس والصلاة الختامية
+                            </label>
+
+                            <textarea
+                                id="lessonConclusion"
+                                rows="3"
+                                placeholder="تلخيص الفكرة الرئيسية والصلاة المناسبة..."
+                                maxlength="4000"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- الأزرار -->
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="savePreparationBtn"
+                        >
+                            💾 حفظ التحضير
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="resetFormBtn"
+                        >
+                            تحضير جديد
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- قائمة التحضيرات المحفوظة -->
+
+            <aside class="saved-card">
+
+                <div class="saved-heading">
+
+                    <div>
+                        <h2>تحضيراتي</h2>
+
+                        <p>
+                            التحضيرات المحفوظة على هذا المتصفح.
+                        </p>
+                    </div>
+
+                    <span class="saved-count" id="savedCount">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="saved-filters">
+
+                    <div class="form-group">
+
+                        <label for="searchPreparations">
+                            البحث في التحضيرات
+                        </label>
+
+                        <input
+                            type="search"
+                            id="searchPreparations"
+                            placeholder="ابحثي عن درس..."
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="filterStage">
+                            تصفية حسب المرحلة
+                        </label>
+
+                        <select id="filterStage">
+
+                            <option value="all">
+                                كل المراحل
+                            </option>
+
+                            <option value="nursery">
+                                الحضانة
+                            </option>
+
+                            <option value="primary">
+                                الابتدائي
+                            </option>
+
+                            <option value="middle">
+                                الإعدادي
+                            </option>
+
+                            <option value="secondary">
+                                الثانوي
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div id="preparationsList" class="preparations-list">
+                </div>
+
+
+                <div id="emptyPreparations" class="empty-state" hidden>
+
+                    <div>📝</div>
+
+                    <h3>لا توجد تحضيرات</h3>
+
+                    <p>
+                        احفظي أول تحضير لكِ وسيظهر هنا.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- تنبيه الحفظ -->
+
+        <div class="info-note">
+
+            <span>ℹ️</span>
+
+            <p>
+                هذه نسخة تجريبية تحفظ التحضيرات داخل المتصفح الحالي.
+                سنربطها لاحقًا بقاعدة بيانات وحسابات المدرسين.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- نافذة عرض تفاصيل التحضير -->
+
+    <div
+        class="modal"
+        id="detailsModal"
+        hidden
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="modal-label">تفاصيل التحضير</span>
+                    <h2 id="detailsTitle">عنوان الدرس</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="close-modal"
+                    id="closeDetailsBtn"
+                    aria-label="إغلاق"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div id="detailsContent" class="details-content">
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="printPreparationBtn"
+                >
+                    🖨️ طباعة التحضير
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="closeDetailsFooterBtn"
+                >
+                    إغلاق
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- رسائل التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="preparation.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

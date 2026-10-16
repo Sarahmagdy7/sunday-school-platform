@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>مكتبة الدروس | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="lessons.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+<body>
+
+```
+<div class="app-container">
+
+    <!-- القائمة الجانبية -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✝</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <p>منصة خدمة الأطفال</p>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <p class="menu-title">القائمة الرئيسية</p>
+
+        <nav class="sidebar-menu">
+
+    <a href="../dashboard/dashboard.html" class="menu-item">
+        <span class="menu-icon">⌂</span>
+        <span>الرئيسية</span>
+    </a>
+
+    <a href="../classes/classes.html" class="menu-item">
+        <span class="menu-icon">▦</span>
+        <span>الفصول</span>
+    </a>
+
+    <a href="../children/children.html" class="menu-item">
+        <span class="menu-icon">♧</span>
+        <span>الأطفال</span>
+    </a>
+
+    <a href="../birthdays/birthdays.html" class="menu-item">
+        <span class="menu-icon">🎂</span>
+        <span>أعياد الميلاد</span>
+    </a>
+
+    <a href="../attendance/attendance.html" class="menu-item">
+        <span class="menu-icon">✓</span>
+        <span>الحضور والغياب</span>
+    </a>
+
+    <a href="lessons.html" class="menu-item active">
+        <span class="menu-icon">📚</span>
+        <span>مكتبة الدروس</span>
+    </a>
+
+    <a href="../preparation/preparation.html" class="menu-item">
+        <span class="menu-icon">✎</span>
+        <span>تحضير الدروس</span>
+    </a>
+
+    <a href="../activities/activities.html" class="menu-item">
+        <span class="menu-icon">☆</span>
+        <span>الأنشطة</span>
+    </a>
+
+    <a href="../tasks/tasks.html" class="menu-item">
+        <span class="menu-icon">📅</span>
+        <span>مهامي القادمة</span>
+    </a>
+
+    <a href="../reports/reports.html" class="menu-item">
+        <span class="menu-icon">▥</span>
+        <span>التقارير</span>
+    </a>
+
+    <a href="../teachers/teachers.html" class="menu-item">
+        <span class="menu-icon">♙</span>
+        <span>إدارة المدرسين</span>
+    </a>
+
+    <a href="../settings/settings.html" class="menu-item">
+        <span class="menu-icon">⚙</span>
+        <span>الإعدادات</span>
+    </a>
+
+</nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="user-card">
+                <div class="user-avatar">م</div>
+
+                <div class="user-info">
+                    <h4>مدرس الفصل</h4>
+                    <p>حساب تجريبي</p>
+                </div>
+            </div>
+
+            <a href="../../index.html" class="logout-link">
+                <span>↪</span>
+                تسجيل الخروج
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="page-heading">
+                <p class="breadcrumb">الرئيسية / مكتبة الدروس</p>
+
+                <h1>مكتبة الدروس</h1>
+
+                <p class="page-description">
+                    اكتشفي الدروس التعليمية ونظّمي محتوى اجتماعات مدارس الأحد.
+                </p>
+            </div>
+
+            <div class="topbar-badge">
+                <span>📚</span>
+
+                <div>
+                    <strong>مكتبة الخدمة</strong>
+                    <p>الدروس والموضوعات</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- الإحصائيات -->
+        <section class="statistics-grid">
+
+            <article class="stat-card">
+                <div class="stat-icon green-icon">▣</div>
+
+                <div>
+                    <p>إجمالي الدروس</p>
+                    <h2 id="totalLessons">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon gold-icon">♧</div>
+
+                <div>
+                    <p>دروس العهد القديم</p>
+                    <h2 id="oldTestamentCount">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon blue-icon">✝</div>
+
+                <div>
+                    <p>دروس العهد الجديد</p>
+                    <h2 id="newTestamentCount">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon purple-icon">★</div>
+
+                <div>
+                    <p>دروس أخرى</p>
+                    <h2 id="otherLessonsCount">0</h2>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- أدوات البحث والتصفية -->
+        <section class="filter-card">
+
+            <div class="filter-heading">
+                <div>
+                    <h2>ابحثي عن درس</h2>
+
+                    <p>
+                        استخدمي البحث أو اختاري المرحلة الدراسية والتصنيف.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="addLessonBtn"
+                    class="primary-button"
+                >
+                    <span>＋</span>
+                    إضافة درس جديد
+                </button>
+            </div>
+
+            <div class="filters-row">
+
+                <div class="form-group search-group">
+                    <label for="searchInput">البحث عن درس</label>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="اكتبي اسم الدرس أو كلمة منه..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="stageFilter">المرحلة الدراسية</label>
+
+                    <select id="stageFilter">
+                        <option value="all">كل المراحل</option>
+                        <option value="nursery">الحضانة</option>
+                        <option value="primary">الابتدائي</option>
+                        <option value="middle">الإعدادي</option>
+                        <option value="secondary">الثانوي</option>
+                        <option value="all-stages">كل المراحل الدراسية</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoryFilter">التصنيف</label>
+
+                    <select id="categoryFilter">
+                        <option value="all">كل التصنيفات</option>
+                        <option value="old">العهد القديم</option>
+                        <option value="new">العهد الجديد</option>
+                        <option value="other">موضوعات أخرى</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- عنوان النتائج -->
+        <section class="lessons-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>الدروس المتاحة</h2>
+
+                    <p id="resultsCount">
+                        جاري تحميل الدروس...
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="resetFiltersBtn"
+                    class="reset-button"
+                >
+                    إعادة ضبط البحث
+                </button>
+
+            </div>
+
+
+            <!-- بطاقات الدروس -->
+            <div class="lessons-grid" id="lessonsGrid">
+            </div>
+
+
+            <!-- رسالة عدم وجود نتائج -->
+            <div id="emptyState" class="empty-state" hidden>
+
+                <div class="empty-icon">📚</div>
+
+                <h3>لا توجد دروس مطابقة</h3>
+
+                <p>
+                    جرّبي تغيير كلمات البحث أو اختاري تصنيفًا آخر.
+                </p>
+
+                <button
+                    type="button"
+                    id="emptyResetBtn"
+                    class="secondary-button"
+                >
+                    عرض جميع الدروس
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- نافذة إضافة أو تعديل درس -->
+        <div
+            class="modal"
+            id="lessonModal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+            hidden
+        >
+
+            <div class="modal-backdrop" data-close-modal></div>
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <div>
+                        <h2 id="modalTitle">إضافة درس جديد</h2>
+
+                        <p>
+                            أدخلي المعلومات الأساسية للدرس.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="closeModalBtn"
+                        class="close-button"
+                        aria-label="إغلاق"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form id="lessonForm">
+
+                    <input type="hidden" id="lessonId">
+
+                    <div class="form-group">
+                        <label for="lessonTitle">عنوان الدرس *</label>
+
+                        <input
+                            type="text"
+                            id="lessonTitle"
+                            maxlength="100"
+                            required
+                            placeholder="مثال: الله الخالق"
+                        >
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="lessonCategory">التصنيف *</label>
+
+                            <select id="lessonCategory" required>
+                                <option value="">اختاري التصنيف</option>
+                                <option value="old">العهد القديم</option>
+                                <option value="new">العهد الجديد</option>
+                                <option value="other">موضوعات أخرى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lessonStage">المرحلة الدراسية *</label>
+
+                            <select id="lessonStage" required>
+                                <option value="">اختاري المرحلة</option>
+                                <option value="nursery">الحضانة</option>
+                                <option value="primary">الابتدائي</option>
+                                <option value="middle">الإعدادي</option>
+                                <option value="secondary">الثانوي</option>
+                                <option value="all-stages">كل المراحل الدراسية</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="lessonReference">المرجع الكتابي</label>
+
+                        <input
+                            type="text"
+                            id="lessonReference"
+                            maxlength="150"
+                            placeholder="مثال: سفر التكوين 1"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="lessonObjective">هدف الدرس *</label>
+
+                        <textarea
+                            id="lessonObjective"
+                            rows="3"
+                            maxlength="1000"
+                            required
+                            placeholder="ماذا سيتعلم الأطفال من هذا الدرس؟"
+                        ></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="lessonSummary">ملخص الدرس *</label>
+
+                        <textarea
+                            id="lessonSummary"
+                            rows="5"
+                            maxlength="3000"
+                            required
+                            placeholder="اكتبي ملخصًا بسيطًا للدرس..."
+                        ></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="lessonDuration">المدة بالدقائق</label>
+
+                        <input
+                            type="number"
+                            id="lessonDuration"
+                            min="5"
+                            max="180"
+                            value="30"
+                        >
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            id="cancelModalBtn"
+                            class="secondary-button"
+                        >
+                            إلغاء
+                        </button>
+
+                        <button
+                            type="submit"
+                            id="submitLessonBtn"
+                            class="primary-button"
+                        >
+                            حفظ الدرس
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+<!-- إرفاق ملفات الدرس -->
+<div class="lesson-attachments-field">
+
+    <h3>📚 ملفات ومراجع الدرس</h3>
+
+    <p>يمكنك إرفاق كتاب PDF أو صور توضيحية للدرس.</p>
+
+    <input
+        type="file"
+        id="lessonAttachments"
+        class="file-input-hidden"
+        accept=".pdf,application/pdf,image/*"
+        multiple
+    >
+
+    <label for="lessonAttachments" class="upload-button">
+        📎 اختاري ملفات PDF أو صور
+    </label>
+
+    <small class="upload-note">
+        يمكنك اختيار أكثر من ملف في المرة الواحدة.
+    </small>
+
+    <div id="selectedAttachments" aria-live="polite"></div>
+
+</div>
+
+        <!-- نافذة تفاصيل الدرس -->
+        <div
+            class="modal"
+            id="detailsModal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="detailsTitle"
+            hidden
+        >
+
+            <div class="modal-backdrop" data-close-details></div>
+
+            <div class="modal-content details-content">
+
+                <div class="modal-header">
+
+                    <div>
+                        <span class="details-label">تفاصيل الدرس</span>
+
+                        <h2 id="detailsTitle">عنوان الدرس</h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="closeDetailsBtn"
+                        class="close-button"
+                        aria-label="إغلاق"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <div id="lessonDetailsBody" class="details-body">
+                </div>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="editFromDetailsBtn"
+                        class="primary-button"
+                    >
+                        تعديل الدرس
+                    </button>
+
+                    <button
+                        type="button"
+                        id="closeDetailsFooterBtn"
+                        class="secondary-button"
+                    >
+                        إغلاق
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer class="page-footer">
+            <p>منصة مدارس الأحد © 2026</p>
+            <p>معًا لخدمة أفضل للأطفال</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="lessons.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+```
+
+</body>
+
+</html>

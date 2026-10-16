@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إدارة الفصول | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="classes.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✝</div>
+
+                <div class="brand-text">
+                    <h2>مدارس الأحد</h2>
+                    <p>منصة الخدمة</p>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <p class="menu-title">القائمة الرئيسية</p>
+
+            <nav class="sidebar-menu">
+
+    <!-- الرئيسية -->
+
+    <a href="../dashboard/dashboard.html" class="menu-item">
+        <span class="menu-icon">⌂</span>
+        <span>الرئيسية</span>
+    </a>
+
+    <!-- الفصول -->
+
+    <a href="classes.html" class="menu-item active">
+        <span class="menu-icon">▦</span>
+        <span>الفصول</span>
+    </a>
+
+    <!-- الأطفال -->
+
+    <a href="../children/children.html" class="menu-item">
+        <span class="menu-icon">♧</span>
+        <span>الأطفال</span>
+    </a>
+
+    <!-- أعياد الميلاد -->
+
+    <a href="../birthdays/birthdays.html" class="menu-item">
+        <span class="menu-icon">🎂</span>
+        <span>أعياد الميلاد</span>
+    </a>
+
+    <!-- الحضور والغياب -->
+
+    <a href="../attendance/attendance.html" class="menu-item">
+        <span class="menu-icon">✓</span>
+        <span>الحضور والغياب</span>
+    </a>
+
+    <!-- مكتبة الدروس -->
+
+    <a href="../lessons/lessons.html" class="menu-item">
+        <span class="menu-icon">▤</span>
+        <span>مكتبة الدروس</span>
+    </a>
+
+    <!-- تحضير الدروس -->
+
+    <a href="../preparation/preparation.html" class="menu-item">
+        <span class="menu-icon">✎</span>
+        <span>تحضير الدروس</span>
+    </a>
+
+    <!-- الأنشطة -->
+
+    <a href="../activities/activities.html" class="menu-item">
+        <span class="menu-icon">☆</span>
+        <span>الأنشطة</span>
+    </a>
+
+    <!-- المهام -->
+
+    <a href="../tasks/tasks.html" class="menu-item">
+        <span class="menu-icon">📅</span>
+        <span>مهامي القادمة</span>
+    </a>
+
+    <!-- التقارير -->
+
+    <a href="../reports/reports.html" class="menu-item">
+        <span class="menu-icon">▥</span>
+        <span>التقارير</span>
+    </a>
+
+    <!-- المدرسون -->
+
+    <a href="../teachers/teachers.html" class="menu-item">
+        <span class="menu-icon">♙</span>
+        <span>إدارة المدرسين</span>
+    </a>
+
+    <!-- الإعدادات -->
+
+    <a href="../settings/settings.html" class="menu-item">
+        <span class="menu-icon">⚙</span>
+        <span>الإعدادات</span>
+    </a>
+
+</nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="user-info">
+                    <div class="user-avatar">م</div>
+
+                    <div>
+                        <h4>مسؤول المنصة</h4>
+                        <p>حساب تجريبي</p>
+                    </div>
+                </div>
+
+                <button class="logout-button" id="logoutButton">
+                    <span>↪</span>
+                    تسجيل الخروج
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+
+                <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    <span>الرئيسية</span>
+                    <span class="breadcrumb-arrow">‹</span>
+                    <strong>إدارة الفصول</strong>
+                </div>
+
+                <div class="topbar-left">
+                    <span class="topbar-icon">✦</span>
+                    <span class="topbar-text">منصة مدارس الأحد</span>
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <section class="content-area">
+
+                <!-- Page Heading -->
+                <div class="page-heading">
+
+                    <div>
+                        <p class="welcome-label">إدارة وتنظيم الفصول</p>
+                        <h1>إدارة الفصول</h1>
+
+                        <p class="page-description">
+                            تابعي الفصول الدراسية ونظّمي بياناتها من مكان واحد.
+                        </p>
+                    </div>
+
+                    <button class="primary-button" id="addClassButton">
+                        <span class="button-plus">＋</span>
+                        إضافة فصل جديد
+                    </button>
+
+                </div>
+
+                <!-- Statistics -->
+                <div class="statistics-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon green-icon">▦</div>
+
+                        <div>
+                            <p>إجمالي الفصول</p>
+                            <h2 id="totalClasses">3</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon gold-icon">♧</div>
+
+                        <div>
+                            <p>إجمالي الأطفال</p>
+                            <h2 id="totalChildren">45</h2>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue-icon">♙</div>
+
+                        <div>
+                            <p>عدد المدرسين</p>
+                            <h2 id="totalTeachers">4</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Filters -->
+                <div class="filter-card">
+
+                    <div class="search-box">
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="ابحثي باسم الفصل..."
+                            aria-label="البحث عن فصل">
+                    </div>
+
+                    <div class="filter-select">
+                        <label for="stageFilter">المرحلة الدراسية</label>
+
+                        <select id="stageFilter">
+                            <option value="all">كل المراحل</option>
+                            <option value="primary">المرحلة الابتدائية</option>
+                        </select>
+                    </div>
+
+                    <button class="reset-button" id="resetFiltersButton">
+                        إعادة ضبط
+                    </button>
+
+                </div>
+
+                <!-- Classes Heading -->
+                <div class="section-heading">
+
+                    <div>
+                        <h2>الفصول الدراسية</h2>
+                        <p>عرض جميع الفصول المسجلة في المنصة.</p>
+                    </div>
+
+                    <span class="results-count" id="resultsCount">
+                        3 فصول
+                    </span>
+
+                </div>
+
+                <!-- Classes Cards -->
+                <div class="classes-grid" id="classesGrid">
+
+                    <!-- Class 1 -->
+                    <article
+                        class="class-card"
+                        data-id="1"
+                        data-name="الصف الأول الابتدائي"
+                        data-stage="primary"
+                        data-grade="الأول الابتدائي"
+                        data-teacher="مريم فؤاد"
+                        data-children="15">
+
+                        <div class="class-card-top">
+                            <div class="class-icon">📚</div>
+
+                            <button
+                                class="more-button"
+                                type="button"
+                                aria-label="خيارات الفصل">
+                                ⋮
+                            </button>
+
+                            <div class="card-menu">
+                                <button type="button" class="edit-class">تعديل الفصل</button>
+                                <button type="button" class="delete-class">حذف الفصل</button>
+                            </div>
+                        </div>
+
+                        <span class="stage-badge">المرحلة الابتدائية</span>
+
+                        <h3>الصف الأول الابتدائي</h3>
+
+                        <p class="class-description">
+                            فصل الصف الأول الابتدائي بمدارس الأحد.
+                        </p>
+
+                        <div class="card-divider"></div>
+
+                        <div class="class-details">
+
+                            <div class="detail-row">
+                                <span class="detail-label">المدرس الأساسي</span>
+                                <strong class="teacher-name">مريم فؤاد</strong>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-label">عدد الأطفال</span>
+                                <strong class="children-count">15 طفلًا</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="view-class-button" type="button">
+                            عرض تفاصيل الفصل
+                            <span>←</span>
+                        </button>
+
+                    </article>
+
+                    <!-- Class 2 -->
+                    <article
+                        class="class-card"
+                        data-id="2"
+                        data-name="الصف الثاني الابتدائي"
+                        data-stage="primary"
+                        data-grade="الثاني الابتدائي"
+                        data-teacher="سارة محمود"
+                        data-children="18">
+
+                        <div class="class-card-top">
+                            <div class="class-icon gold-class-icon">📖</div>
+
+                            <button
+                                class="more-button"
+                                type="button"
+                                aria-label="خيارات الفصل">
+                                ⋮
+                            </button>
+
+                            <div class="card-menu">
+                                <button type="button" class="edit-class">تعديل الفصل</button>
+                                <button type="button" class="delete-class">حذف الفصل</button>
+                            </div>
+                        </div>
+
+                        <span class="stage-badge">المرحلة الابتدائية</span>
+
+                        <h3>الصف الثاني الابتدائي</h3>
+
+                        <p class="class-description">
+                            فصل الصف الثاني الابتدائي بمدارس الأحد.
+                        </p>
+
+                        <div class="card-divider"></div>
+
+                        <div class="class-details">
+
+                            <div class="detail-row">
+                                <span class="detail-label">المدرس الأساسي</span>
+                                <strong class="teacher-name">سارة محمود</strong>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-label">عدد الأطفال</span>
+                                <strong class="children-count">18 طفلًا</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="view-class-button" type="button">
+                            عرض تفاصيل الفصل
+                            <span>←</span>
+                        </button>
+
+                    </article>
+
+                    <!-- Class 3 -->
+                    <article
+                        class="class-card"
+                        data-id="3"
+                        data-name="الصف الثالث الابتدائي"
+                        data-stage="primary"
+                        data-grade="الثالث الابتدائي"
+                        data-teacher="مينا عادل"
+                        data-children="12">
+
+                        <div class="class-card-top">
+                            <div class="class-icon blue-class-icon">✝</div>
+
+                            <button
+                                class="more-button"
+                                type="button"
+                                aria-label="خيارات الفصل">
+                                ⋮
+                            </button>
+
+                            <div class="card-menu">
+                                <button type="button" class="edit-class">تعديل الفصل</button>
+                                <button type="button" class="delete-class">حذف الفصل</button>
+                            </div>
+                        </div>
+
+                        <span class="stage-badge">المرحلة الابتدائية</span>
+
+                        <h3>الصف الثالث الابتدائي</h3>
+
+                        <p class="class-description">
+                            فصل الصف الثالث الابتدائي بمدارس الأحد.
+                        </p>
+
+                        <div class="card-divider"></div>
+
+                        <div class="class-details">
+
+                            <div class="detail-row">
+                                <span class="detail-label">المدرس الأساسي</span>
+                                <strong class="teacher-name">مينا عادل</strong>
+                            </div>
+
+                            <div class="detail-row">
+                                <span class="detail-label">عدد الأطفال</span>
+                                <strong class="children-count">12 طفلًا</strong>
+                            </div>
+
+                        </div>
+
+                        <button class="view-class-button" type="button">
+                            عرض تفاصيل الفصل
+                            <span>←</span>
+                        </button>
+
+                    </article>
+
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" hidden>
+                    <div class="empty-icon">⌕</div>
+                    <h3>لا توجد فصول مطابقة</h3>
+                    <p>جرّبي البحث باسم آخر أو أعيدي ضبط الفلاتر.</p>
+                </div>
+
+                <!-- Footer -->
+                <footer class="page-footer">
+                    <p>منصة مدارس الأحد © 2026</p>
+                    <p>نخدم بمحبة وننمو معًا</p>
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Add/Edit Class Modal -->
+    <div class="modal-overlay" id="classModal" hidden>
+
+        <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="modal-subtitle">إدارة بيانات الفصل</p>
+                    <h2 id="modalTitle">إضافة فصل جديد</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeModalButton"
+                    aria-label="إغلاق">
+                    ×
+                </button>
+
+            </div>
+
+            <form id="classForm">
+
+                <input type="hidden" id="classId">
+
+                <div class="form-group">
+                    <label for="className">اسم الفصل *</label>
+
+                    <input
+                        type="text"
+                        id="className"
+                        placeholder="مثال: الصف الرابع الابتدائي"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="classStage">المرحلة الدراسية *</label>
+
+                    <select id="classStage" required>
+                        <option value="">اختاري المرحلة</option>
+                        <option value="primary">المرحلة الابتدائية</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="classTeacher">اسم المدرس الأساسي *</label>
+
+                    <input
+                        type="text"
+                        id="classTeacher"
+                        placeholder="اكتبي اسم المدرس"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="classChildren">عدد الأطفال</label>
+
+                    <input
+                        type="number"
+                        id="classChildren"
+                        min="0"
+                        value="0"
+                        required>
+                </div>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        id="cancelModalButton">
+                        إلغاء
+                    </button>
+
+                    <button type="submit" class="save-button">
+                        حفظ الفصل
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="classes.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+/* ===================================
+   الألوان العامة للمنصة
+   =================================== */
+
+:root,
+html[data-theme="green"] {
+    --primary-color: #247a55;
+    --primary-dark: #195b3e;
+    --primary-light: #e8f5ee;
+
+    --background-color: #f4f8f5;
+    --white-color: #ffffff;
+
+    --text-color: #26352d;
+    --text-light: #77827b;
+    --border-color: #e5ebe7;
+}
+
+/* الوضع الفاتح */
+html[data-theme="light"] {
+    --primary-color: #3676b8;
+    --primary-dark: #285b91;
+    --primary-light: #eaf2ff;
+
+    --background-color: #f5f7fa;
+    --white-color: #ffffff;
+
+    --text-color: #253247;
+    --text-light: #667085;
+    --border-color: #e0e6ed;
+}
+
+/* الوضع الداكن */
+html[data-theme="dark"] {
+    --primary-color: #55b987;
+    --primary-dark: #32865d;
+    --primary-light: #243d31;
+
+    --background-color: #171d19;
+    --white-color: #222b25;
+
+    --text-color: #edf4ef;
+    --text-light: #b0beb4;
+    --border-color: #39463d;
+}
+
+/* الخلفية والكتابة */
+html[data-theme] body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color);
+}
+
+/* القوائم الجانبية والبطاقات */
+html[data-theme] .sidebar,
+html[data-theme] .sidebar-header,
+html[data-theme] .sidebar-footer,
+html[data-theme] .stat-card,
+html[data-theme] .statistic-card,
+html[data-theme] .statistics-card,
+html[data-theme] .quick-action-card,
+html[data-theme] .quick-action,
+html[data-theme] .upcoming-tasks-section,
+html[data-theme] .dashboard-tasks-section,
+html[data-theme] .dashboard-task-item,
+html[data-theme] .task-preview-item,
+html[data-theme] .table-container,
+html[data-theme] .modal,
+html[data-theme] .content-card,
+html[data-theme] .settings-card {
+    background-color: var(--white-color) !important;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+/* عناوين الصفحات */
+html[data-theme] .page-title,
+html[data-theme] .dashboard-title,
+html[data-theme] .section-title,
+html[data-theme] .stat-value,
+html[data-theme] .quick-action-title,
+html[data-theme] .dashboard-task-title,
+html[data-theme] .task-preview-title,
+html[data-theme] .modal-title {
+    color: var(--text-color);
+}
+
+/* النصوص الثانوية */
+html[data-theme] .page-description,
+html[data-theme] .dashboard-subtitle,
+html[data-theme] .section-description,
+html[data-theme] .stat-label,
+html[data-theme] .stat-note,
+html[data-theme] .quick-action-description,
+html[data-theme] .dashboard-task-description,
+html[data-theme] .task-preview-description {
+    color: var(--text-light);
+}
+
+/* روابط القائمة الجانبية */
+html[data-theme] .nav-link {
+    color: var(--text-light);
+}
+
+html[data-theme] .nav-link:hover,
+html[data-theme] .nav-link.active {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+/* الأزرار الأساسية */
+html[data-theme] .btn-primary,
+html[data-theme] .primary-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* حقول الإدخال */
+html[data-theme] .form-control,
+html[data-theme] .search-input,
+html[data-theme] .filter-select,
+html[data-theme] input,
+html[data-theme] select,
+html[data-theme] textarea {
+    background-color: var(--white-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+/* الجداول */
+html[data-theme] th,
+html[data-theme] td {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+html[data-theme] thead {
+    background-color: var(--background-color);
+}
+
+/* الوضع الداكن: تمييز البطاقات عند المرور عليها */
+html[data-theme="dark"] .quick-action-card:hover,
+html[data-theme="dark"] .quick-action:hover,
+html[data-theme="dark"] .dashboard-task-item:hover,
+html[data-theme="dark"] .task-preview-item:hover {
+    background-color: #2b372f !important;
+}

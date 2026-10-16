@@ -1,0 +1,804 @@
+/* ========================================
+   أعياد الميلاد - التنسيق العام
+   ======================================== */
+
+:root {
+    --birthday-primary: var(--primary-color, #247a55);
+    --birthday-dark: var(--primary-dark, #195b3e);
+    --birthday-light: var(--primary-light, #e8f5ee);
+
+    --birthday-bg: var(--background-color, #f5f7f6);
+    --birthday-white: var(--white-color, #ffffff);
+
+    --birthday-text: var(--text-color, #26352d);
+    --birthday-muted: var(--text-light, #77827b);
+    --birthday-border: var(--border-color, #e5ebe7);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--birthday-bg);
+    color: var(--birthday-text);
+    font-family: "Cairo", Tahoma, Arial, sans-serif;
+    line-height: 1.8;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ========================================
+   الشريط العلوي
+   ======================================== */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 15px 5%;
+    min-height: 82px;
+
+    background: var(--birthday-white);
+    border-bottom: 1px solid var(--birthday-border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    background: var(--birthday-primary);
+    color: #ffffff;
+
+    font-size: 25px;
+}
+
+.brand h2 {
+    margin: 0;
+    color: var(--birthday-primary);
+    font-size: 18px;
+}
+
+.brand span {
+    display: block;
+    color: var(--birthday-muted);
+    font-size: 12px;
+}
+
+.back-button {
+    padding: 9px 14px;
+
+    border-radius: 9px;
+    background: var(--birthday-light);
+    color: var(--birthday-primary);
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   المحتوى
+   ======================================== */
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 30px auto;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.breadcrumb {
+    margin-bottom: 5px;
+    color: var(--birthday-muted);
+    font-size: 12px;
+}
+
+.page-heading h1 {
+    margin: 0 0 7px;
+    color: var(--birthday-primary);
+    font-size: 28px;
+}
+
+.page-heading p {
+    margin: 0;
+    color: var(--birthday-muted);
+    font-size: 13px;
+}
+
+
+/* ========================================
+   الأزرار
+   ======================================== */
+
+.primary-button,
+.secondary-button {
+    min-height: 43px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 17px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.primary-button {
+    background: var(--birthday-primary);
+    color: #ffffff;
+}
+
+.primary-button:hover {
+    background: var(--birthday-dark);
+}
+
+.secondary-button {
+    background: var(--birthday-white);
+    border-color: var(--birthday-border);
+    color: var(--birthday-text);
+}
+
+.secondary-button:hover {
+    background: var(--birthday-light);
+    border-color: var(--birthday-primary);
+}
+
+
+/* ========================================
+   تذكير أعياد الميلاد
+   ======================================== */
+
+.reminder-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-bottom: 18px;
+    padding: 19px;
+
+    border: 1px solid var(--birthday-border);
+    border-radius: 14px;
+
+    background: var(--birthday-light);
+}
+
+.reminder-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: var(--birthday-primary);
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.reminder-banner h2 {
+    margin: 0 0 5px;
+    color: var(--birthday-primary);
+    font-size: 16px;
+}
+
+.reminder-banner p {
+    margin: 0;
+    color: var(--birthday-text);
+    font-size: 13px;
+}
+
+
+/* ========================================
+   إشعارات المتصفح
+   ======================================== */
+
+.notification-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    margin-bottom: 22px;
+    padding: 19px;
+
+    border: 1px solid var(--birthday-border);
+    border-radius: 14px;
+
+    background: var(--birthday-white);
+}
+
+.notification-card h2 {
+    margin: 0 0 5px;
+    font-size: 15px;
+    color: var(--birthday-text);
+}
+
+.notification-card p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--birthday-muted);
+}
+
+
+/* ========================================
+   الإحصائيات
+   ======================================== */
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 0;
+    padding: 20px;
+
+    background: var(--birthday-white);
+    border: 1px solid var(--birthday-border);
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(20, 60, 40, 0.04);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--birthday-light);
+    color: var(--birthday-primary);
+    border-radius: 13px;
+
+    font-size: 23px;
+}
+
+.stat-card p {
+    margin: 0 0 4px;
+    color: var(--birthday-muted);
+    font-size: 12px;
+}
+
+.stat-card h3 {
+    margin: 0;
+    color: var(--birthday-primary);
+    font-size: 28px;
+}
+
+
+/* ========================================
+   البطاقات والأقسام
+   ======================================== */
+
+.birthday-form-card,
+.list-section {
+    margin-bottom: 23px;
+    padding: 23px;
+
+    background: var(--birthday-white);
+    border: 1px solid var(--birthday-border);
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(20, 60, 40, 0.035);
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+    color: var(--birthday-primary);
+    font-size: 19px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--birthday-muted);
+    font-size: 12px;
+}
+
+
+/* ========================================
+   النموذج
+   ======================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--birthday-text);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 10px 12px;
+
+    background: var(--birthday-white);
+    color: var(--birthday-text);
+
+    border: 1px solid var(--birthday-border);
+    border-radius: 9px;
+
+    outline: none;
+    font-size: 13px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--birthday-primary);
+    box-shadow: 0 0 0 3px var(--birthday-light);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+
+/* ========================================
+   البحث والتصفية
+   ======================================== */
+
+.filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.search-group {
+    min-width: 0;
+}
+
+
+/* ========================================
+   قائمة أعياد الميلاد
+   ======================================== */
+
+.birthdays-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.birthday-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    min-width: 0;
+    padding: 18px;
+
+    background: var(--birthday-white);
+    border: 1px solid var(--birthday-border);
+    border-radius: 13px;
+
+    transition: 0.2s ease;
+}
+
+.birthday-card:hover {
+    border-color: var(--birthday-primary);
+    transform: translateY(-2px);
+}
+
+.birthday-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.birthday-avatar {
+    width: 49px;
+    height: 49px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: var(--birthday-light);
+    color: var(--birthday-primary);
+
+    font-size: 23px;
+}
+
+.birthday-person-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.birthday-person-info h3 {
+    margin: 0 0 4px;
+    color: var(--birthday-text);
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.birthday-person-info p {
+    margin: 0;
+    color: var(--birthday-muted);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.person-badge {
+    align-self: flex-start;
+    padding: 4px 9px;
+    border-radius: 20px;
+
+    background: var(--birthday-light);
+    color: var(--birthday-primary);
+
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.birthday-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding-top: 12px;
+    border-top: 1px solid var(--birthday-border);
+}
+
+.birthday-details p {
+    margin: 0;
+    color: var(--birthday-muted);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.birthday-details strong {
+    color: var(--birthday-text);
+}
+
+.birthday-countdown {
+    display: inline-flex;
+    align-self: flex-start;
+
+    padding: 5px 10px;
+    border-radius: 8px;
+
+    background: var(--birthday-light);
+    color: var(--birthday-primary);
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.birthday-countdown.tomorrow {
+    background: #fff0df;
+    color: #a75a14;
+}
+
+.birthday-countdown.today {
+    background: #e2f6e8;
+    color: #216c3b;
+}
+
+.birthday-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.small-button {
+    padding: 7px 11px;
+    border: 1px solid var(--birthday-border);
+    border-radius: 8px;
+
+    background: var(--birthday-white);
+    color: var(--birthday-text);
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.small-button:hover {
+    background: var(--birthday-light);
+}
+
+.small-button.delete {
+    color: #b83232;
+}
+
+
+/* ========================================
+   الحالة الفارغة
+   ======================================== */
+
+.empty-state {
+    padding: 35px 15px;
+    text-align: center;
+}
+
+.empty-icon {
+    margin-bottom: 10px;
+    font-size: 42px;
+}
+
+.empty-state h3 {
+    margin: 0 0 8px;
+    color: var(--birthday-text);
+    font-size: 16px;
+}
+
+.empty-state p {
+    margin: 0 0 16px;
+    color: var(--birthday-muted);
+    font-size: 12px;
+}
+
+
+/* ========================================
+   ملاحظة أسفل الصفحة
+   ======================================== */
+
+.footer-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding: 15px;
+    border: 1px solid var(--birthday-border);
+    border-radius: 11px;
+
+    background: var(--birthday-white);
+    color: var(--birthday-muted);
+
+    font-size: 12px;
+}
+
+.footer-note span {
+    font-size: 18px;
+}
+
+.footer-note p {
+    margin: 0;
+}
+
+
+/* ========================================
+   رسائل التأكيد
+   ======================================== */
+
+.toast {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 2000;
+
+    max-width: calc(100vw - 44px);
+    padding: 13px 18px;
+
+    color: #ffffff;
+    background: #26352d;
+
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    font-size: 12px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: 0.25s;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   الشاشات المتوسطة
+   ======================================== */
+
+@media (max-width: 850px) {
+    .birthdays-list {
+        grid-template-columns: 1fr;
+    }
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+}
+
+
+/* ========================================
+   الموبايل
+   ======================================== */
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 12px 4%;
+    }
+
+    .brand-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand h2 {
+        font-size: 15px;
+    }
+
+    .brand span {
+        font-size: 10px;
+    }
+
+    .back-button {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-heading h1 {
+        font-size: 24px;
+    }
+
+    .page-heading .primary-button {
+        width: 100%;
+    }
+
+    .notification-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .notification-card .secondary-button {
+        width: 100%;
+    }
+
+    .form-grid,
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .birthday-form-card,
+    .list-section {
+        padding: 16px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .birthday-card-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .person-badge {
+        margin-right: auto;
+    }
+
+    .toast {
+        right: 12px;
+        bottom: 12px;
+    }
+}

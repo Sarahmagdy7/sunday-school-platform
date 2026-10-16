@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>التقارير والإحصائيات | مدارس الأحد</title>
+
+    <link rel="stylesheet" href="reports.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+
+        </a>
+
+        <a href="../dashboard/dashboard.html" class="back-button">
+            ← لوحة التحكم
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- عنوان الصفحة -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="breadcrumb">
+                    الرئيسية / التقارير
+                </div>
+
+                <h1>التقارير والإحصائيات</h1>
+
+                <p>
+                    تابعي الحضور والغياب والأنشطة وتحضيرات الدروس خلال الفترة المحددة.
+                </p>
+
+            </div>
+
+            <div class="heading-icon">📊</div>
+
+        </section>
+
+
+        <!-- الفلاتر -->
+
+        <section class="filter-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>تحديد فترة التقرير</h2>
+
+                    <p>
+                        اختاري الفترة الزمنية والفصل المطلوب لعرض النتائج.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="filters-grid">
+
+                <div class="form-group">
+
+                    <label for="dateFrom">من تاريخ</label>
+
+                    <input type="date" id="dateFrom">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="dateTo">إلى تاريخ</label>
+
+                    <input type="date" id="dateTo">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="classFilter">الفصل</label>
+
+                    <select id="classFilter">
+
+                        <option value="all">كل الفصول</option>
+
+                        <option value="first">
+                            الصف الأول الابتدائي
+                        </option>
+
+                        <option value="second">
+                            الصف الثاني الابتدائي
+                        </option>
+
+                        <option value="third">
+                            الصف الثالث الابتدائي
+                        </option>
+
+                        <option value="fourth">
+                            الصف الرابع الابتدائي
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="filter-actions">
+
+                <button
+                    type="button"
+                    id="applyFiltersBtn"
+                    class="primary-button"
+                >
+                    عرض التقرير
+                </button>
+
+                <button
+                    type="button"
+                    id="resetFiltersBtn"
+                    class="secondary-button"
+                >
+                    إعادة ضبط
+                </button>
+
+                <span id="reportPeriod" class="period-label"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- إحصائيات الحضور -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>ملخص الحضور والغياب</h2>
+
+                    <p>
+                        إحصائيات سجلات الحضور المسجلة خلال الفترة المحددة.
+                    </p>
+                </div>
+
+                <span class="section-icon">👥</span>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-blue">📅</div>
+
+                    <div>
+                        <p>أيام الاجتماع المسجلة</p>
+                        <h3 id="attendanceSessions">0</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-green">✓</div>
+
+                    <div>
+                        <p>مرات الحضور</p>
+                        <h3 id="presentTotal">0</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-red">✕</div>
+
+                    <div>
+                        <p>مرات الغياب</p>
+                        <h3 id="absentTotal">0</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-gold">◷</div>
+
+                    <div>
+                        <p>مرات التأخير</p>
+                        <h3 id="lateTotal">0</h3>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- ملخص النسب -->
+
+            <div class="attendance-summary">
+
+                <div class="summary-heading">
+
+                    <div>
+                        <h3>ملخص حالات الحضور</h3>
+
+                        <p>
+                            النسب محسوبة من الحالات التي سُجلت خلال الفترة.
+                        </p>
+                    </div>
+
+                    <strong id="attendanceRate">0%</strong>
+
+                </div>
+
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-fill"
+                        id="attendanceProgress"
+                    ></div>
+
+                </div>
+
+
+                <div class="progress-legend">
+
+                    <span>
+                        <i class="legend-dot dot-present"></i>
+                        حضور
+                    </span>
+
+                    <span>
+                        <i class="legend-dot dot-absent"></i>
+                        غياب
+                    </span>
+
+                    <span>
+                        <i class="legend-dot dot-late"></i>
+                        تأخير
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- جدول الحضور -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>تفاصيل اجتماعات مدارس الأحد</h2>
+
+                    <p>
+                        عدد حالات الحضور والغياب في كل تاريخ مسجل.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="exportAttendanceBtn"
+                    class="outline-button"
+                >
+                    ↓ تصدير التقرير
+                </button>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>التاريخ</th>
+                                <th>الحاضرون</th>
+                                <th>الغائبون</th>
+                                <th>المتأخرون</th>
+                                <th>الحالات المسجلة</th>
+                                <th>نسبة الحضور</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="attendanceReportBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    id="attendanceEmptyState"
+                    class="empty-state"
+                    hidden
+                >
+
+                    <div>📋</div>
+
+                    <h3>لا توجد سجلات حضور</h3>
+
+                    <p>
+                        اختاري فترة أخرى أو سجّلي بيانات الحضور أولًا.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- الأنشطة -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>تقرير الأنشطة</h2>
+
+                    <p>
+                        ملخص الأنشطة المسجلة خلال الفترة المحددة.
+                    </p>
+                </div>
+
+                <span class="section-icon">🎨</span>
+
+            </div>
+
+
+            <div class="stats-grid three-columns">
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-blue">🎯</div>
+
+                    <div>
+                        <p>إجمالي الأنشطة</p>
+                        <h3 id="activitiesTotal">0</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-gold">📅</div>
+
+                    <div>
+                        <p>أنشطة مخطط لها</p>
+                        <h3 id="activitiesPlanned">0</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-green">✓</div>
+
+                    <div>
+                        <p>أنشطة مكتملة</p>
+                        <h3 id="activitiesCompleted">0</h3>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>اسم النشاط</th>
+                                <th>النوع</th>
+                                <th>الفصل</th>
+                                <th>التاريخ</th>
+                                <th>الحالة</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="activitiesReportBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    id="activitiesEmptyState"
+                    class="empty-state"
+                    hidden
+                >
+
+                    <div>🎨</div>
+
+                    <h3>لا توجد أنشطة في هذه الفترة</h3>
+
+                    <p>
+                        لم يتم العثور على أنشطة مطابقة للفلاتر المحددة.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-footer">
+
+                <button
+                    type="button"
+                    id="exportActivitiesBtn"
+                    class="outline-button"
+                >
+                    ↓ تصدير تقرير الأنشطة
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- تحضيرات الدروس -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>تقرير تحضيرات الدروس</h2>
+
+                    <p>
+                        التحضيرات المحفوظة خلال الفترة المحددة.
+                    </p>
+                </div>
+
+                <span class="section-icon">📖</span>
+
+            </div>
+
+
+            <div class="stats-grid two-columns">
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-green">📝</div>
+
+                    <div>
+                        <p>إجمالي التحضيرات</p>
+                        <h3 id="preparationsTotal">0</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon icon-gold">📚</div>
+
+                    <div>
+                        <p>تحضيرات المرحلة الابتدائية</p>
+                        <h3 id="preparationsPrimary">0</h3>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>عنوان الدرس</th>
+                                <th>المرحلة</th>
+                                <th>الفصل</th>
+                                <th>التاريخ</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="preparationsReportBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    id="preparationsEmptyState"
+                    class="empty-state"
+                    hidden
+                >
+
+                    <div>📖</div>
+
+                    <h3>لا توجد تحضيرات في هذه الفترة</h3>
+
+                    <p>
+                        احفظي تحضيرات الدروس أولًا لتظهر في التقرير.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-footer">
+
+                <button
+                    type="button"
+                    id="exportPreparationsBtn"
+                    class="outline-button"
+                >
+                    ↓ تصدير تقرير التحضيرات
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- تنبيه -->
+
+        <div class="info-note">
+
+            <span>ℹ️</span>
+
+            <p>
+                التقارير تقرأ البيانات التجريبية المحفوظة في المتصفح.
+                إذا لم تظهر بيانات، تأكدي من تسجيل الحضور أو إضافة الأنشطة
+                والتحضيرات أولًا. ستحتاج المنصة لاحقًا إلى قاعدة بيانات
+                مركزية لجمع تقارير جميع المدرسين.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- رسالة التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="reports.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

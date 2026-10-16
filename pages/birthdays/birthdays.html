@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>أعياد الميلاد | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="birthdays.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+
+            <div class="brand-icon">🎂</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+
+        </a>
+
+        <a href="../dashboard/dashboard.html" class="back-button">
+            ← لوحة التحكم
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- عنوان الصفحة -->
+
+        <section class="page-heading">
+
+            <div>
+                <div class="breadcrumb">
+                    الرئيسية / أعياد الميلاد
+                </div>
+
+                <h1>🎂 أعياد الميلاد</h1>
+
+                <p>
+                    تابعي أعياد ميلاد الأطفال والمدرسين،
+                    واستعدي لتهنئتهم في يومهم المميز.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="addBirthdayBtn"
+            >
+                + إضافة عيد ميلاد
+            </button>
+
+        </section>
+
+
+        <!-- تذكير أعياد الميلاد غدًا -->
+
+        <section
+            class="reminder-banner"
+            id="tomorrowReminder"
+            aria-live="polite"
+        >
+
+            <div class="reminder-icon">🔔</div>
+
+            <div>
+                <h2>تذكيرات أعياد الميلاد</h2>
+
+                <p id="tomorrowReminderText">
+                    سيتم عرض أعياد الميلاد المسجلة التي موعدها غدًا هنا.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- تفعيل إشعارات المتصفح -->
+
+        <section class="notification-card">
+
+            <div>
+                <h2>🔔 إشعارات المتصفح</h2>
+
+                <p>
+                    فعّلي الإشعارات لتصلك رسالة تذكير عند فتح المنصة
+                    في اليوم السابق لعيد الميلاد.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="enableNotificationsBtn"
+            >
+                تفعيل التنبيهات
+            </button>
+
+        </section>
+
+
+        <!-- الإحصائيات -->
+
+        <section class="statistics-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-icon">🎂</div>
+
+                <div>
+                    <p>إجمالي أعياد الميلاد</p>
+                    <h3 id="totalBirthdays">0</h3>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon">🔔</div>
+
+                <div>
+                    <p>أعياد الميلاد غدًا</p>
+                    <h3 id="tomorrowCount">0</h3>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon">📅</div>
+
+                <div>
+                    <p>خلال 7 أيام</p>
+                    <h3 id="weekCount">0</h3>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- نموذج إضافة أو تعديل عيد ميلاد -->
+
+        <section
+            class="birthday-form-card"
+            id="birthdayFormCard"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <h2 id="birthdayFormTitle">إضافة عيد ميلاد جديد</h2>
+
+                    <p>
+                        أدخلي بيانات الطفل أو المدرس وتاريخ ميلاده.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="birthdayForm">
+
+                <input
+                    type="hidden"
+                    id="birthdayId"
+                >
+
+
+                <div class="form-grid">
+
+                    <!-- الاسم -->
+
+                    <div class="form-group">
+
+                        <label for="personName">
+                            الاسم الكامل *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="personName"
+                            placeholder="اكتبي الاسم"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- نوع الشخص -->
+
+                    <div class="form-group">
+
+                        <label for="personType">
+                            نوع الشخص *
+                        </label>
+
+                        <select id="personType" required>
+
+                            <option value="child">
+                                طفل / طفلة
+                            </option>
+
+                            <option value="teacher">
+                                مدرس / مدرسة
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- الفصل -->
+
+                    <div class="form-group">
+
+                        <label for="personGroup">
+                            الفصل أو المرحلة
+                        </label>
+
+                        <input
+                            type="text"
+                            id="personGroup"
+                            placeholder="مثال: الصف الثالث الابتدائي"
+                            maxlength="100"
+                        >
+
+                    </div>
+
+
+                    <!-- تاريخ الميلاد -->
+
+                    <div class="form-group">
+
+                        <label for="birthDate">
+                            تاريخ الميلاد *
+                        </label>
+
+                        <input
+                            type="date"
+                            id="birthDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- ملاحظات -->
+
+                    <div class="form-group full-width">
+
+                        <label for="birthdayNotes">
+                            ملاحظات إضافية
+                        </label>
+
+                        <textarea
+                            id="birthdayNotes"
+                            rows="3"
+                            maxlength="500"
+                            placeholder="أي ملاحظات تحبي تحتفظي بها..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="saveBirthdayBtn"
+                    >
+                        💾 حفظ عيد الميلاد
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="cancelBirthdayBtn"
+                    >
+                        إلغاء
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- البحث والتصفية -->
+
+        <section class="list-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>قائمة أعياد الميلاد</h2>
+
+                    <p>
+                        ابحثي عن طفل أو مدرس، أو رتبي الأعياد حسب موعدها.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="filters">
+
+                <div class="form-group search-group">
+
+                    <label for="birthdaySearch">
+                        البحث بالاسم
+                    </label>
+
+                    <input
+                        type="search"
+                        id="birthdaySearch"
+                        placeholder="اكتبي الاسم..."
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="personTypeFilter">
+                        نوع الشخص
+                    </label>
+
+                    <select id="personTypeFilter">
+
+                        <option value="all">الكل</option>
+
+                        <option value="child">الأطفال</option>
+
+                        <option value="teacher">المدرسون</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- بطاقات أعياد الميلاد -->
+
+            <div id="birthdaysList" class="birthdays-list"></div>
+
+
+            <!-- حالة عدم وجود بيانات -->
+
+            <div id="birthdaysEmpty" class="empty-state" hidden>
+
+                <div class="empty-icon">🎂</div>
+
+                <h3>لسه مفيش أعياد ميلاد مسجلة</h3>
+
+                <p>
+                    أضيفي أول عيد ميلاد علشان يبدأ جدول التذكيرات.
+                </p>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="emptyAddBirthdayBtn"
+                >
+                    + إضافة عيد ميلاد
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ملاحظة -->
+
+        <div class="footer-note">
+
+            <span>ℹ️</span>
+
+            <p>
+                تُحفظ البيانات حاليًا في المتصفح على هذا الجهاز.
+                هذه الصفحة لا تسحب تلقائيًا بيانات الأطفال والمدرسين
+                الموجودة في الصفحات الأخرى حتى يتم ربطها بها.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- رسالة التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/birthday-reminders.js"></script>
+    <script src="birthdays.js"></script>
+    
+
+</body>
+
+</html>

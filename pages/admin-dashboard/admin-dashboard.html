@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>لوحة تحكم المسؤول | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- القائمة الجانبية -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✝</div>
+
+                <div>
+                    <h2>مدارس الأحد</h2>
+                    <p>لوحة إدارة المنصة</p>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <p class="menu-title">إدارة المنصة</p>
+
+            <nav class="sidebar-menu">
+
+                <a
+                    href="admin-dashboard.html"
+                    class="menu-item active"
+                >
+                    <span class="menu-icon">⌂</span>
+                    <span>لوحة المسؤول</span>
+                </a>
+
+                <a
+                    href="../admin-requests/admin-requests.html"
+                    class="menu-item"
+                >
+                    <span class="menu-icon">📋</span>
+                    <span>طلبات الحسابات</span>
+                </a>
+
+                <a href="../teachers/teachers.html" class="menu-item">
+                    <span class="menu-icon">♙</span>
+                    <span>إدارة المدرسين</span>
+                </a>
+
+                <a href="../children/children.html" class="menu-item">
+                    <span class="menu-icon">♧</span>
+                    <span>إدارة الأطفال</span>
+                </a>
+
+                <a href="../classes/classes.html" class="menu-item">
+                    <span class="menu-icon">▦</span>
+                    <span>إدارة الفصول</span>
+                </a>
+
+                <a href="../attendance/attendance.html" class="menu-item">
+                    <span class="menu-icon">✓</span>
+                    <span>الحضور والغياب</span>
+                </a>
+
+                <a href="../lessons/lessons.html" class="menu-item">
+                    <span class="menu-icon">📚</span>
+                    <span>مكتبة الدروس</span>
+                </a>
+
+                <a href="../birthdays/birthdays.html" class="menu-item">
+                    <span class="menu-icon">🎂</span>
+                    <span>أعياد الميلاد</span>
+                </a>
+
+                <a href="../reports/reports.html" class="menu-item">
+                    <span class="menu-icon">▥</span>
+                    <span>التقارير</span>
+                </a>
+
+                <a href="../settings/settings.html" class="menu-item">
+                    <span class="menu-icon">⚙</span>
+                    <span>الإعدادات</span>
+                </a>
+                
+                <a href="../users/users.html" class="menu-item">
+    <span class="menu-icon">👥</span>
+    <span>إدارة حسابات المستخدمين</span>
+</a>
+
+                <a href="../profile/profile.html" class="menu-item">
+                    <span class="menu-icon">👤</span>
+                    <span>الملف الشخصي</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="user-card">
+                    <div class="user-avatar">م</div>
+
+                    <div class="user-info">
+                        <h4>مسؤول المنصة</h4>
+                        <p>واجهة تجريبية</p>
+                    </div>
+                </div>
+
+                <a href="../../index.html" class="logout-link">
+                    <span>↪</span>
+                    العودة لتسجيل الدخول
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div class="page-heading">
+                    <p class="breadcrumb">
+                        الرئيسية / لوحة المسؤول
+                    </p>
+
+                    <h1>لوحة تحكم المسؤول</h1>
+
+                    <p class="page-description">
+                        تابعي إحصائيات المنصة وطلبات تسجيل المدرسين.
+                    </p>
+                </div>
+
+                <div class="date-card">
+                    <span>📅</span>
+
+                    <div>
+                        <small>تاريخ اليوم</small>
+                        <strong id="todayDate">--/--/----</strong>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- رسالة ترحيب -->
+            <section class="welcome-banner">
+
+                <div>
+                    <span class="welcome-label">
+                        لوحة الإدارة
+                    </span>
+
+                    <h2>أهلًا بكِ في إدارة مدارس الأحد ❤️</h2>
+
+                    <p>
+                        من هنا يمكنكِ متابعة بيانات المنصة
+                        والوصول إلى إدارة الحسابات.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">🛡️</div>
+
+            </section>
+
+            <!-- الإحصائيات -->
+            <section class="statistics-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon green">♧</div>
+
+                    <div class="stat-info">
+                        <p>إجمالي الأطفال</p>
+                        <h2 id="totalChildren">0</h2>
+                        <span>البيانات المحفوظة محليًا</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon blue">▦</div>
+
+                    <div class="stat-info">
+                        <p>إجمالي الفصول</p>
+                        <h2 id="totalClasses">0</h2>
+                        <span>الفصول المسجلة</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon purple">📚</div>
+
+                    <div class="stat-info">
+                        <p>الدروس في المكتبة</p>
+                        <h2 id="totalLessons">0</h2>
+                        <span>الدروس المحفوظة محليًا</span>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon orange">📋</div>
+
+                    <div class="stat-info">
+                        <p>طلبات الحسابات المعلقة</p>
+                        <h2 id="pendingRequests">0</h2>
+                        <span>تحتاج إلى المراجعة</span>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- طلبات الحسابات -->
+            <section class="content-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>طلبات إنشاء الحسابات</h2>
+
+                        <p>
+                            الطلبات التي لم يتم اتخاذ قرار بشأنها.
+                        </p>
+                    </div>
+
+                    <a
+                        href="../admin-requests/admin-requests.html"
+                        class="primary-button"
+                    >
+                        عرض جميع الطلبات ←
+                    </a>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>اسم المتقدم</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>تاريخ الطلب</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentRequestsBody">
+
+                            <tr>
+                                <td colspan="4" class="empty-message">
+                                    جاري تحميل الطلبات...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- روابط الإدارة السريعة -->
+            <section class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>الوصول السريع</h2>
+
+                        <p>
+                            انتقلي مباشرة إلى الأقسام التي تحتاجينها.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="quick-links-grid">
+
+                    <a
+                        href="../admin-requests/admin-requests.html"
+                        class="quick-link"
+                    >
+                        <span class="quick-icon orange">📋</span>
+
+                        <div>
+                            <h3>طلبات الحسابات</h3>
+                            <p>مراجعة طلبات التسجيل</p>
+                        </div>
+
+                        <span class="quick-arrow">←</span>
+                    </a>
+
+                    <a
+                        href="../teachers/teachers.html"
+                        class="quick-link"
+                    >
+                        <span class="quick-icon blue">♙</span>
+
+                        <div>
+                            <h3>المدرسون</h3>
+                            <p>إدارة بيانات المدرسين</p>
+                        </div>
+
+                        <span class="quick-arrow">←</span>
+                    </a>
+
+                    <a
+                        href="../children/children.html"
+                        class="quick-link"
+                    >
+                        <span class="quick-icon green">♧</span>
+
+                        <div>
+                            <h3>الأطفال</h3>
+                            <p>عرض وإدارة بيانات الأطفال</p>
+                        </div>
+
+                        <span class="quick-arrow">←</span>
+                    </a>
+
+                    <a
+                        href="../classes/classes.html"
+                        class="quick-link"
+                    >
+                        <span class="quick-icon purple">▦</span>
+
+                        <div>
+                            <h3>الفصول</h3>
+                            <p>عرض وإدارة الفصول</p>
+                        </div>
+
+                        <span class="quick-arrow">←</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- ملاحظة حالة المشروع -->
+            <section class="notice-card">
+
+                <span class="notice-icon">ℹ</span>
+
+                <div>
+                    <h3>حالة لوحة الإدارة</h3>
+
+                    <p>
+                        هذه واجهة Frontend تجريبية.
+                        الإحصائيات تُقرأ من التخزين المحلي للمتصفح،
+                        وطلبات الحسابات لا تُشارك بين الأجهزة.
+                        حماية حساب المسؤول وإدارة صلاحيات المستخدمين
+                        تحتاج إلى Backend ونظام مصادقة حقيقي.
+                    </p>
+                </div>
+
+            </section>
+
+            <footer class="page-footer">
+                <p>منصة مدارس الأحد © 2026</p>
+                <p>خدمة بمحبة • تعليم بإيمان • نمو في النعمة</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

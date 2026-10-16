@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إدارة المدرسين | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="teachers.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+
+        </a>
+
+        <a href="../dashboard/dashboard.html" class="back-button">
+            ← لوحة التحكم
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- عنوان الصفحة -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="breadcrumb">
+                    الرئيسية / إدارة المدرسين
+                </div>
+
+                <h1>إدارة حسابات المدرسين</h1>
+
+                <p>
+                    تابعي طلبات الانضمام، وراجعي حسابات المدرسين،
+                    ونظّمي صلاحيات الخدمة.
+                </p>
+
+            </div>
+
+            <div class="heading-icon">👥</div>
+
+        </section>
+
+
+        <!-- تنبيه تجريبي -->
+
+        <div class="info-banner">
+
+            <span>ℹ️</span>
+
+            <p>
+                هذه نسخة تجريبية لإدارة الحسابات. الموافقة على الحساب هنا
+                لا تنشئ حساب دخول حقيقيًا؛ سنربطها بالخادم ونظام الصلاحيات
+                عند تجهيز الـ Backend.
+            </p>
+
+        </div>
+
+
+        <!-- الإحصائيات -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-icon icon-blue">👥</div>
+
+                <div>
+                    <p>إجمالي الحسابات</p>
+                    <h2 id="totalTeachers">0</h2>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon icon-green">✓</div>
+
+                <div>
+                    <p>الحسابات النشطة</p>
+                    <h2 id="activeTeachers">0</h2>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon icon-gold">◷</div>
+
+                <div>
+                    <p>طلبات معلقة</p>
+                    <h2 id="pendingTeachers">0</h2>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon icon-red">⏸</div>
+
+                <div>
+                    <p>حسابات موقوفة أو مرفوضة</p>
+                    <h2 id="inactiveTeachers">0</h2>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- طلبات الانضمام -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <div class="heading-title">
+
+                    <div class="section-icon">📩</div>
+
+                    <div>
+                        <h2>طلبات الانضمام</h2>
+
+                        <p>
+                            راجعي بيانات المدرسين قبل قبول طلباتهم.
+                        </p>
+                    </div>
+
+                </div>
+
+                <span class="count-badge" id="pendingCount">
+                    0 طلب
+                </span>
+
+            </div>
+
+
+            <div id="pendingRequests" class="requests-grid">
+            </div>
+
+
+            <div id="emptyRequests" class="empty-state" hidden>
+
+                <div class="empty-icon">📭</div>
+
+                <h3>لا توجد طلبات معلقة</h3>
+
+                <p>
+                    ستظهر هنا طلبات الانضمام الجديدة عندما تتوفر.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- قائمة المدرسين -->
+
+        <section class="section-card">
+
+            <div class="section-heading">
+
+                <div class="heading-title">
+
+                    <div class="section-icon">👩‍🏫</div>
+
+                    <div>
+                        <h2>جميع الحسابات</h2>
+
+                        <p>
+                            ابحثي عن مدرس أو عدّلي حالة حسابه.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="addTeacherBtn"
+                >
+                    + إضافة مدرس
+                </button>
+
+            </div>
+
+
+            <!-- البحث والتصفية -->
+
+            <div class="filters-grid">
+
+                <div class="form-group">
+
+                    <label for="searchTeachers">
+                        البحث عن مدرس
+                    </label>
+
+                    <input
+                        type="search"
+                        id="searchTeachers"
+                        placeholder="الاسم أو البريد الإلكتروني..."
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="roleFilter">
+                        نوع الحساب
+                    </label>
+
+                    <select id="roleFilter">
+
+                        <option value="all">
+                            كل الأنواع
+                        </option>
+
+                        <option value="teacher">
+                            مدرس
+                        </option>
+
+                        <option value="assistant">
+                            مساعد مدرس
+                        </option>
+
+                        <option value="admin">
+                            مسؤول الخدمة
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="statusFilter">
+                        حالة الحساب
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            كل الحالات
+                        </option>
+
+                        <option value="active">
+                            نشط
+                        </option>
+
+                        <option value="pending">
+                            في انتظار الموافقة
+                        </option>
+
+                        <option value="suspended">
+                            موقوف
+                        </option>
+
+                        <option value="rejected">
+                            مرفوض
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- الجدول -->
+
+            <div class="table-card">
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>الاسم</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>نوع الحساب</th>
+                                <th>الفصل</th>
+                                <th>الحالة</th>
+                                <th>الإجراءات</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="teachersTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div id="emptyTeachers" class="empty-state" hidden>
+
+                    <div class="empty-icon">🔍</div>
+
+                    <h3>لا توجد حسابات مطابقة</h3>
+
+                    <p>
+                        جرّبي تغيير كلمة البحث أو خيارات التصفية.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-footer">
+
+                <span id="teachersCount">
+                    عدد الحسابات: 0
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ملاحظة الأمان -->
+
+        <section class="security-note">
+
+            <span>🛡️</span>
+
+            <div>
+
+                <strong>مهم: حماية حسابات المدرسين</strong>
+
+                <p>
+                    صلاحيات الحسابات الحقيقية يجب أن يتحقق منها الخادم،
+                    وليس واجهة JavaScript وحدها. لن نضع كلمات المرور
+                    أو بيانات تسجيل الدخول في هذه الصفحة.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- نافذة إضافة أو تعديل مدرس -->
+
+    <div
+        class="modal"
+        id="teacherModal"
+        hidden
+    >
+
+        <div
+            class="modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-label">إدارة الحساب</span>
+
+                    <h2 id="modalTitle">إضافة مدرس جديد</h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="close-modal"
+                    id="closeModalBtn"
+                    aria-label="إغلاق"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="teacherForm">
+
+                <input
+                    type="hidden"
+                    id="teacherId"
+                >
+
+
+                <div class="form-group">
+
+                    <label for="teacherName">
+                        الاسم الكامل *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="teacherName"
+                        maxlength="100"
+                        placeholder="اسم المدرس"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="teacherEmail">
+                        البريد الإلكتروني *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="teacherEmail"
+                        maxlength="254"
+                        placeholder="example@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="teacherPhone">
+                        رقم الهاتف (اختياري)
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="teacherPhone"
+                        maxlength="25"
+                        placeholder="رقم الهاتف"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="teacherRole">
+                        نوع الحساب *
+                    </label>
+
+                    <select id="teacherRole" required>
+
+                        <option value="teacher">
+                            مدرس
+                        </option>
+
+                        <option value="assistant">
+                            مساعد مدرس
+                        </option>
+
+                    </select>
+
+                    <small>
+                        لا يمكن إنشاء حساب مسؤول جديد من هذا النموذج.
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="teacherClass">
+                        الفصل المسند إليه
+                    </label>
+
+                    <select id="teacherClass">
+
+                        <option value="unassigned">
+                            لم يُحدد بعد
+                        </option>
+
+                        <option value="first">
+                            الصف الأول الابتدائي
+                        </option>
+
+                        <option value="second">
+                            الصف الثاني الابتدائي
+                        </option>
+
+                        <option value="third">
+                            الصف الثالث الابتدائي
+                        </option>
+
+                        <option value="fourth">
+                            الصف الرابع الابتدائي
+                        </option>
+
+                        <option value="fifth">
+                            الصف الخامس الابتدائي
+                        </option>
+
+                        <option value="sixth">
+                            الصف السادس الابتدائي
+                        </option>
+
+                        <option value="nursery">
+                            الحضانة
+                        </option>
+
+                    </select>
+
+                    <small>
+                        النموذج التجريبي يسمح بفصل واحد فقط لكل مدرس.
+                    </small>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="saveTeacherBtn"
+                    >
+                        حفظ البيانات
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="cancelModalBtn"
+                    >
+                        إلغاء
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- رسالة التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="teachers.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إدارة المهام | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+
+            <div class="brand-icon">✝</div>
+
+            <div class="brand-text">
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+
+        </a>
+
+        <a href="../dashboard/dashboard.html" class="back-button">
+            ← لوحة التحكم
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- عنوان الصفحة -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="breadcrumb">
+                    الرئيسية / إدارة المهام
+                </div>
+
+                <h1>مهامي القادمة</h1>
+
+                <p>
+                    نظّمي مهام الخدمة، وتابعي مواعيدها، وحددي ما تم إنجازه.
+                </p>
+
+            </div>
+
+            <div class="heading-icon">📅</div>
+
+        </section>
+
+
+        <!-- الإحصائيات -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-icon green-icon">📋</div>
+
+                <div>
+                    <p>إجمالي المهام</p>
+                    <h2 id="totalTasks">0</h2>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon gold-icon">📅</div>
+
+                <div>
+                    <p>المهام القادمة</p>
+                    <h2 id="upcomingTasks">0</h2>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon blue-icon">◷</div>
+
+                <div>
+                    <p>مهام قيد التنفيذ</p>
+                    <h2 id="inProgressTasks">0</h2>
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon purple-icon">✓</div>
+
+                <div>
+                    <p>المهام المكتملة</p>
+                    <h2 id="completedTasks">0</h2>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- نموذج إضافة مهمة -->
+
+        <section class="content-card" id="taskFormSection">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2 id="formHeading">إضافة مهمة جديدة</h2>
+
+                    <p>
+                        اكتبي تفاصيل المهمة وحددي موعد تنفيذها.
+                    </p>
+                </div>
+
+                <span class="section-icon">✎</span>
+
+            </div>
+
+
+            <form id="taskForm">
+
+                <input
+                    type="hidden"
+                    id="taskId"
+                >
+
+
+                <div class="form-grid">
+
+                    <!-- عنوان المهمة -->
+
+                    <div class="form-group">
+
+                        <label for="taskTitle">
+                            عنوان المهمة *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="taskTitle"
+                            placeholder="مثال: تحضير درس الله الخالق"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- نوع المهمة -->
+
+                    <div class="form-group">
+
+                        <label for="taskType">
+                            نوع المهمة *
+                        </label>
+
+                        <select id="taskType" required>
+
+                            <option value="lesson">
+                                تحضير درس
+                            </option>
+
+                            <option value="activity">
+                                تجهيز نشاط
+                            </option>
+
+                            <option value="attendance">
+                                متابعة الحضور
+                            </option>
+
+                            <option value="meeting">
+                                اجتماع الخدمة
+                            </option>
+
+                            <option value="general">
+                                مهمة عامة
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- تاريخ المهمة -->
+
+                    <div class="form-group">
+
+                        <label for="taskDate">
+                            موعد المهمة *
+                        </label>
+
+                        <input
+                            type="date"
+                            id="taskDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- الأولوية -->
+
+                    <div class="form-group">
+
+                        <label for="taskPriority">
+                            أهمية المهمة
+                        </label>
+
+                        <select id="taskPriority">
+
+                            <option value="normal">
+                                عادية
+                            </option>
+
+                            <option value="important">
+                                مهمة
+                            </option>
+
+                            <option value="urgent">
+                                عاجلة
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- الفصل -->
+
+                    <div class="form-group">
+
+                        <label for="taskClass">
+                            الفصل المرتبط بالمهمة
+                        </label>
+
+                        <select id="taskClass">
+
+                            <option value="all">
+                                كل الفصول / لا يوجد فصل محدد
+                            </option>
+
+                            <option value="nursery">
+                                الحضانة
+                            </option>
+
+                            <option value="first">
+                                الصف الأول الابتدائي
+                            </option>
+
+                            <option value="second">
+                                الصف الثاني الابتدائي
+                            </option>
+
+                            <option value="third">
+                                الصف الثالث الابتدائي
+                            </option>
+
+                            <option value="fourth">
+                                الصف الرابع الابتدائي
+                            </option>
+
+                            <option value="fifth">
+                                الصف الخامس الابتدائي
+                            </option>
+
+                            <option value="sixth">
+                                الصف السادس الابتدائي
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- الحالة -->
+
+                    <div class="form-group">
+
+                        <label for="taskStatus">
+                            حالة المهمة
+                        </label>
+
+                        <select id="taskStatus">
+
+                            <option value="pending">
+                                لم تبدأ
+                            </option>
+
+                            <option value="in-progress">
+                                قيد التنفيذ
+                            </option>
+
+                            <option value="completed">
+                                مكتملة
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- وصف المهمة -->
+
+                <div class="form-group">
+
+                    <label for="taskDescription">
+                        وصف المهمة *
+                    </label>
+
+                    <textarea
+                        id="taskDescription"
+                        rows="4"
+                        placeholder="اكتبي التفاصيل التي ستساعدك على تنفيذ المهمة..."
+                        maxlength="3000"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- ملاحظات -->
+
+                <div class="form-group">
+
+                    <label for="taskNotes">
+                        ملاحظات إضافية (اختياري)
+                    </label>
+
+                    <textarea
+                        id="taskNotes"
+                        rows="2"
+                        placeholder="أي ملاحظات أو تجهيزات مطلوبة..."
+                        maxlength="2000"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- أزرار النموذج -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="saveTaskBtn"
+                    >
+                        💾 حفظ المهمة
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="resetTaskFormBtn"
+                    >
+                        مهمة جديدة
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- قائمة المهام -->
+
+        <section class="content-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>قائمة المهام</h2>
+
+                    <p>
+                        ابحثي عن المهام وراجعي مواعيدها وحالتها.
+                    </p>
+                </div>
+
+                <span class="count-badge" id="tasksCount">
+                    0 مهمة
+                </span>
+
+            </div>
+
+
+            <!-- البحث والتصفية -->
+
+            <div class="filters-grid">
+
+                <div class="form-group">
+
+                    <label for="searchTasks">
+                        البحث عن مهمة
+                    </label>
+
+                    <input
+                        type="search"
+                        id="searchTasks"
+                        placeholder="اكتبي عنوان المهمة..."
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="statusFilter">
+                        حالة المهمة
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            كل الحالات
+                        </option>
+
+                        <option value="pending">
+                            لم تبدأ
+                        </option>
+
+                        <option value="in-progress">
+                            قيد التنفيذ
+                        </option>
+
+                        <option value="completed">
+                            مكتملة
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="priorityFilter">
+                        أهمية المهمة
+                    </label>
+
+                    <select id="priorityFilter">
+
+                        <option value="all">
+                            كل الأولويات
+                        </option>
+
+                        <option value="normal">
+                            عادية
+                        </option>
+
+                        <option value="important">
+                            مهمة
+                        </option>
+
+                        <option value="urgent">
+                            عاجلة
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- البطاقات -->
+
+            <div id="tasksGrid" class="tasks-grid"></div>
+
+
+            <!-- حالة عدم وجود مهام -->
+
+            <div id="emptyState" class="empty-state" hidden>
+
+                <div class="empty-icon">📋</div>
+
+                <h3 id="emptyStateTitle">لا توجد مهام حتى الآن</h3>
+
+                <p id="emptyStateMessage">
+                    أضيفي أول مهمة للخدمة وستظهر هنا.
+                </p>
+
+                <button
+                    type="button"
+                    id="addFirstTaskBtn"
+                    class="primary-button"
+                >
+                    + إضافة أول مهمة
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- تنبيه -->
+
+        <div class="info-note">
+
+            <span>ℹ️</span>
+
+            <p>
+                المهام في هذه النسخة تُحفظ محليًا داخل المتصفح.
+                سنربطها لاحقًا بقاعدة البيانات وحسابات المدرسين.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- رسالة التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="tasks.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

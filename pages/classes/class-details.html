@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تفاصيل الفصل | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="class-details.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+            <div class="brand-icon">✝</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+        </a>
+
+        <a href="classes.html" class="back-button">
+            ← العودة إلى الفصول
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- عنوان الفصل -->
+
+        <section class="page-heading">
+
+            <div>
+                <div class="breadcrumb">
+                    الرئيسية / الفصول الدراسية / تفاصيل الفصل
+                </div>
+
+                <span class="class-badge" id="classStageBadge">
+                    المرحلة الابتدائية
+                </span>
+
+                <h1 id="className">تفاصيل الفصل</h1>
+
+                <p id="classDescription">
+                    بيانات الفصل والمدرسين والأطفال المسجلين.
+                </p>
+            </div>
+
+            <div class="heading-icon">🏫</div>
+
+        </section>
+
+
+        <!-- الإحصائيات -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <div class="stat-icon green-icon">👧</div>
+
+                <div>
+                    <p>عدد الأطفال</p>
+                    <h2 id="studentsCount">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon blue-icon">👩‍🏫</div>
+
+                <div>
+                    <p>عدد المدرسين</p>
+                    <h2 id="teachersCount">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon gold-icon">✓</div>
+
+                <div>
+                    <p>الحاضرون اليوم</p>
+                    <h2 id="presentCount">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon red-icon">✕</div>
+
+                <div>
+                    <p>الغائبون اليوم</p>
+                    <h2 id="absentCount">0</h2>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- معلومات الفصل -->
+
+        <section class="content-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>بيانات الفصل</h2>
+                    <p>المعلومات الأساسية الخاصة بالفصل الدراسي.</p>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="editClassBtn"
+                >
+                    ✎ تعديل بيانات الفصل
+                </button>
+
+            </div>
+
+
+            <div class="details-grid">
+
+                <div class="detail-item">
+                    <span>اسم الفصل</span>
+                    <strong id="detailClassName">—</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>المرحلة الدراسية</span>
+                    <strong id="detailStage">—</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>موعد الاجتماع</span>
+                    <strong id="detailMeetingTime">لم يُحدد بعد</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>مكان الاجتماع</span>
+                    <strong id="detailLocation">لم يُحدد بعد</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>المدرس الأساسي</span>
+                    <strong id="detailMainTeacher">لم يُحدد بعد</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>حالة الفصل</span>
+                    <strong class="active-label">نشط</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- المدرسون -->
+
+        <section class="content-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>المدرسون المسندون للفصل</h2>
+
+                    <p>
+                        يمكن أن يعمل أكثر من مدرس في الفصل نفسه.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="teachersList" class="teachers-grid"></div>
+
+            <div id="emptyTeachers" class="empty-state" hidden>
+                <div>👩‍🏫</div>
+                <h3>لم يتم تحديد المدرسين</h3>
+                <p>لم تتم إضافة مدرسين إلى هذا الفصل حتى الآن.</p>
+            </div>
+
+        </section>
+
+
+        <!-- الأطفال -->
+
+        <section class="content-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>أطفال الفصل</h2>
+
+                    <p>
+                        قائمة الأطفال المسجلين في هذا الفصل.
+                    </p>
+                </div>
+
+                <a
+                    href="../children/children.html"
+                    class="primary-button"
+                >
+                    إدارة الأطفال
+                </a>
+
+            </div>
+
+
+            <div class="search-box">
+
+                <label for="studentSearch">البحث عن طفل</label>
+
+                <input
+                    type="search"
+                    id="studentSearch"
+                    placeholder="اكتبي اسم الطفل..."
+                >
+
+            </div>
+
+
+            <div class="table-card">
+
+                <div class="table-responsive">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>اسم الطفل</th>
+                                <th>الفصل</th>
+                                <th>حالة الحضور اليوم</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentsTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+                <div id="emptyStudents" class="empty-state" hidden>
+                    <div>👧</div>
+                    <h3>لا يوجد أطفال</h3>
+                    <p>لم يتم العثور على أطفال في هذا الفصل.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- الوصول السريع -->
+
+        <section class="content-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>الوصول السريع</h2>
+                    <p>الصفحات التي تحتاجينها لمتابعة الفصل.</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+
+                <a href="../attendance/attendance.html" class="quick-action">
+                    <span>✓</span>
+                    <strong>الحضور والغياب</strong>
+                    <small>تسجيل ومراجعة الحضور</small>
+                </a>
+
+                <a href="../preparation/preparation.html" class="quick-action">
+                    <span>📖</span>
+                    <strong>تحضير الدروس</strong>
+                    <small>إنشاء تحضير جديد</small>
+                </a>
+
+                <a href="../activities/activities.html" class="quick-action">
+                    <span>🎨</span>
+                    <strong>الأنشطة</strong>
+                    <small>متابعة الأنشطة والفعاليات</small>
+                </a>
+
+                <a href="classes.html" class="quick-action">
+                    <span>🏫</span>
+                    <strong>كل الفصول</strong>
+                    <small>العودة لقائمة الفصول</small>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ملاحظة -->
+
+        <div class="info-note">
+            <span>ℹ️</span>
+
+            <p>
+                هذه نسخة تجريبية. البيانات المعروضة ليست مرتبطة بعد بقاعدة
+                بيانات مركزية، وسنربطها لاحقًا ببيانات الأطفال والمدرسين
+                والحضور الفعلية.
+            </p>
+        </div>
+
+    </main>
+
+
+    <!-- رسالة التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="class-details.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>

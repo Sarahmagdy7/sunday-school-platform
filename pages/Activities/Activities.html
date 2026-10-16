@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الأنشطة | منصة مدارس الأحد</title>
+
+    <link rel="stylesheet" href="activities.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+</head>
+
+<body>
+
+    <!-- الشريط العلوي -->
+
+    <header class="topbar">
+
+        <a href="../dashboard/dashboard.html" class="brand">
+
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>مدارس الأحد</h2>
+                <span>منصة خدمة الأطفال</span>
+            </div>
+
+        </a>
+
+        <a href="../dashboard/dashboard.html" class="back-button">
+            ← لوحة التحكم
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- عنوان الصفحة -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="breadcrumb">
+                    الرئيسية / الأنشطة
+                </div>
+
+                <h1>الأنشطة والفعاليات</h1>
+
+                <p>
+                    نظّمي الأنشطة والألعاب والمسابقات والفعاليات الخاصة بالأطفال.
+                </p>
+
+            </div>
+
+            <div class="heading-icon">🎨</div>
+
+        </section>
+
+
+        <!-- الإحصائيات -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-icon icon-green">🎯</div>
+
+                <div>
+                    <p>إجمالي الأنشطة</p>
+                    <h2 id="totalActivities">0</h2>
+                </div>
+
+            </article>
+
+            <article class="stat-card">
+
+                <div class="stat-icon icon-gold">📅</div>
+
+                <div>
+                    <p>أنشطة قادمة</p>
+                    <h2 id="upcomingActivities">0</h2>
+                </div>
+
+            </article>
+
+            <article class="stat-card">
+
+                <div class="stat-icon icon-blue">✓</div>
+
+                <div>
+                    <p>أنشطة مكتملة</p>
+                    <h2 id="completedActivities">0</h2>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- إضافة نشاط جديد -->
+
+        <section class="form-card" id="activityFormSection">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2 id="formHeading">إضافة نشاط جديد</h2>
+
+                    <p>
+                        سجّلي تفاصيل النشاط لتنظيمه والرجوع إليه لاحقًا.
+                    </p>
+                </div>
+
+                <span class="section-icon">✎</span>
+
+            </div>
+
+
+            <form id="activityForm">
+
+                <input
+                    type="hidden"
+                    id="activityId"
+                >
+
+
+                <div class="form-grid">
+
+                    <!-- اسم النشاط -->
+
+                    <div class="form-group">
+
+                        <label for="activityTitle">
+                            اسم النشاط *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="activityTitle"
+                            placeholder="مثال: مسابقة الكتاب المقدس"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- نوع النشاط -->
+
+                    <div class="form-group">
+
+                        <label for="activityType">
+                            نوع النشاط *
+                        </label>
+
+                        <select id="activityType" required>
+
+                            <option value="game">لعبة تعليمية</option>
+
+                            <option value="competition">مسابقة</option>
+
+                            <option value="craft">أعمال يدوية</option>
+
+                            <option value="trip">رحلة أو زيارة</option>
+
+                            <option value="celebration">احتفال</option>
+
+                            <option value="service">خدمة مجتمعية</option>
+
+                            <option value="other">أخرى</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- الفصل -->
+
+                    <div class="form-group">
+
+                        <label for="activityClass">
+                            الفصل المستهدف
+                        </label>
+
+                        <select id="activityClass">
+
+                            <option value="all">
+                                كل الفصول
+                            </option>
+
+                            <option value="nursery">
+                                الحضانة
+                            </option>
+
+                            <option value="first">
+                                الصف الأول الابتدائي
+                            </option>
+
+                            <option value="second">
+                                الصف الثاني الابتدائي
+                            </option>
+
+                            <option value="third">
+                                الصف الثالث الابتدائي
+                            </option>
+
+                            <option value="fourth">
+                                الصف الرابع الابتدائي
+                            </option>
+
+                            <option value="fifth">
+                                الصف الخامس الابتدائي
+                            </option>
+
+                            <option value="sixth">
+                                الصف السادس الابتدائي
+                            </option>
+
+                            <option value="middle">
+                                الإعدادي
+                            </option>
+
+                            <option value="secondary">
+                                الثانوي
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- التاريخ -->
+
+                    <div class="form-group">
+
+                        <label for="activityDate">
+                            تاريخ النشاط *
+                        </label>
+
+                        <input
+                            type="date"
+                            id="activityDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- المدة -->
+
+                    <div class="form-group">
+
+                        <label for="activityDuration">
+                            مدة النشاط بالدقائق
+                        </label>
+
+                        <input
+                            type="number"
+                            id="activityDuration"
+                            min="1"
+                            max="1440"
+                            placeholder="مثال: 30"
+                        >
+
+                    </div>
+
+
+                    <!-- الحالة -->
+
+                    <div class="form-group">
+
+                        <label for="activityStatus">
+                            حالة النشاط
+                        </label>
+
+                        <select id="activityStatus">
+
+                            <option value="planned">
+                                مخطط له
+                            </option>
+
+                            <option value="completed">
+                                مكتمل
+                            </option>
+
+                            <option value="cancelled">
+                                ملغي
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- وصف النشاط -->
+
+                <div class="form-group">
+
+                    <label for="activityDescription">
+                        وصف النشاط *
+                    </label>
+
+                    <textarea
+                        id="activityDescription"
+                        rows="4"
+                        placeholder="اكتبي فكرة النشاط وطريقة تنفيذه..."
+                        maxlength="5000"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- الأدوات المطلوبة -->
+
+                <div class="form-group">
+
+                    <label for="activityMaterials">
+                        الأدوات والوسائل المطلوبة
+                    </label>
+
+                    <textarea
+                        id="activityMaterials"
+                        rows="3"
+                        placeholder="مثال: أوراق، ألوان، صور، بطاقات..."
+                        maxlength="3000"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- ملاحظات -->
+
+                <div class="form-group">
+
+                    <label for="activityNotes">
+                        ملاحظات إضافية
+                    </label>
+
+                    <textarea
+                        id="activityNotes"
+                        rows="3"
+                        placeholder="أي تعليمات أو ملاحظات مهمة..."
+                        maxlength="3000"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- الأزرار -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="saveActivityBtn"
+                    >
+                        💾 حفظ النشاط
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="resetActivityBtn"
+                    >
+                        نشاط جديد
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- قائمة الأنشطة -->
+
+        <section class="activities-section">
+
+            <div class="list-heading">
+
+                <div>
+                    <h2>الأنشطة المسجلة</h2>
+
+                    <p>
+                        ابحثي عن الأنشطة وراجعي حالتها وتفاصيلها.
+                    </p>
+                </div>
+
+                <span id="activityCount" class="count-badge">
+                    0 نشاط
+                </span>
+
+            </div>
+
+
+            <!-- البحث والتصفية -->
+
+            <div class="filter-card">
+
+                <div class="filter-grid">
+
+                    <div class="form-group">
+
+                        <label for="searchInput">
+                            البحث
+                        </label>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="ابحثي باسم النشاط..."
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="typeFilter">
+                            نوع النشاط
+                        </label>
+
+                        <select id="typeFilter">
+
+                            <option value="all">
+                                كل الأنواع
+                            </option>
+
+                            <option value="game">
+                                لعبة تعليمية
+                            </option>
+
+                            <option value="competition">
+                                مسابقة
+                            </option>
+
+                            <option value="craft">
+                                أعمال يدوية
+                            </option>
+
+                            <option value="trip">
+                                رحلة أو زيارة
+                            </option>
+
+                            <option value="celebration">
+                                احتفال
+                            </option>
+
+                            <option value="service">
+                                خدمة مجتمعية
+                            </option>
+
+                            <option value="other">
+                                أخرى
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="statusFilter">
+                            حالة النشاط
+                        </label>
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                كل الحالات
+                            </option>
+
+                            <option value="planned">
+                                مخطط له
+                            </option>
+
+                            <option value="completed">
+                                مكتمل
+                            </option>
+
+                            <option value="cancelled">
+                                ملغي
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- البطاقات -->
+
+            <div id="activitiesList" class="activities-grid">
+            </div>
+
+
+            <!-- لا توجد أنشطة -->
+
+            <div id="emptyState" class="empty-state" hidden>
+
+                <div class="empty-icon">🎨</div>
+
+                <h3>لا توجد أنشطة</h3>
+
+                <p>
+                    أضيفي نشاطًا جديدًا أو غيّري خيارات البحث والتصفية.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- تنبيه -->
+
+        <div class="info-note">
+
+            <span>ℹ️</span>
+
+            <p>
+                هذه نسخة تجريبية تحفظ الأنشطة في المتصفح الحالي.
+                سنربطها لاحقًا بقاعدة البيانات وحسابات المدرسين.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- رسالة التأكيد -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <script src="activities.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/birthday-reminders.js"></script>
+</body>
+
+</html>
